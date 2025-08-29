@@ -1,0 +1,10 @@
+#Run pip install -r requirements.txt to install the dependencies
+ibm-watsonxdata
+ibm-watsonx-ai
+requests
+pandas
+fastapi
+uvicorn
+py7zr
+axios
+react

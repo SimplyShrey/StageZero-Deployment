@@ -1,0 +1,15 @@
+# Node.js / React
+frontend/stagezero/node_modules/
+frontend/stagezero/build/
+
+# Python
+backend/__pycache__/
+backend/*.pyc
+backend/.env
+
+# Logs
+logs/
+*.log
+
+# System files
+.DS_Store
