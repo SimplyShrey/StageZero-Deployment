@@ -1,25 +1,14 @@
-// import React from 'react';
-// import Chatbot from './components/Chatbot';
-// import './App.css';
+import React from "react";
+import Chatbot from "./components/Chatbot";
+import "./App.css";
 
-// function App() {
-//   return (
-//     <div className="App">
-//       <h1>StageZero</h1>
-//       <Chatbot />
-//     </div>
-//   );
-// }
-
-// export default App;
-import React from 'react';
-
-const Chatbot: React.FC = () => {
+function App() {
   return (
-    <div>
-      <p>Chatbot component loaded.</p>
+    <div className="app-container">
+      <h1>StageZero Chatbot</h1>
+      <Chatbot />
     </div>
   );
-};
+}
 
-export default Chatbot;
+export default App;
