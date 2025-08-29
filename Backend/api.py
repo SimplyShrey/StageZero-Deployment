@@ -51,25 +51,22 @@ def send_to_watsonx():
     except requests.exceptions.RequestException as e:
         return {"status": "error", "detail": str(e)}
 
-@app.post("/run-command")
-async def run_command(
-    action: str = Form(...), 
-    file: UploadFile | None = File(None)
-):
-    output = ""
 
+@app.post("/run-command")
+async def run_command(action: str = Form(...), file: UploadFile | None = File(None)):
+    output = ""
     if action == "analyze-log":
         if not file:
             return {"output": "No file uploaded."}
-        file_path = os.path.join(UPLOAD_DIR, file.filename)
+        os.makedirs("uploads", exist_ok=True)
+        file_path = os.path.join("uploads", file.filename)
         with open(file_path, "wb") as f:
             shutil.copyfileobj(file.file, f)
-        # Here you can call your classify_logs or full_pipeline
         output = f"File {file.filename} received and ready for analysis."
-        print(f"[CLI] {output}")
-
+        print(f"[CLI] {output}")  # prints to your terminal
     elif action == "check-status":
         output = "Server is running."
-        print(f"[CLI] {output}")
-
+        print(f"[CLI] {output}")  # prints to your terminal
     return {"output": output}
+
+

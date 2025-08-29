@@ -1,9 +1,13 @@
 import React, { useState, useRef, useEffect } from "react";
-import Message from "./message";
 import "./chatbot.css";
 
+interface MessageType {
+  text: string;
+  sender: "user" | "bot";
+}
+
 const Chatbot: React.FC = () => {
-  const [messages, setMessages] = useState<{ text: string; sender: "user" | "bot" }[]>([]);
+  const [messages, setMessages] = useState<MessageType[]>([]);
   const [file, setFile] = useState<File | null>(null);
   const chatEndRef = useRef<HTMLDivElement>(null);
 
@@ -12,7 +16,7 @@ const Chatbot: React.FC = () => {
   }, [messages]);
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (e.target.files && e.target.files.length > 0) {
+    if (e.target.files?.length) {
       const selectedFile = e.target.files[0];
       setFile(selectedFile);
       setMessages(prev => [...prev, { text: `Selected file: ${selectedFile.name}`, sender: "user" }]);
@@ -29,7 +33,7 @@ const Chatbot: React.FC = () => {
 
     try {
       const formData = new FormData();
-      if (action === "analyze-log" && file) formData.append("file", file);
+      if (file && action === "analyze-log") formData.append("file", file);
       formData.append("action", action);
 
       const res = await fetch("http://localhost:8000/run-command", {
@@ -54,9 +58,11 @@ const Chatbot: React.FC = () => {
 
         <div className="chatbot-messages">
           {messages.map((msg, i) => (
-            <Message key={i} text={msg.text} sender={msg.sender} />
+            <div key={i} className={`message-${msg.sender}`}>
+              {msg.text}
+            </div>
           ))}
-          <div ref={chatEndRef} />
+          <div ref={chatEndRef}></div>
         </div>
 
         <div className="chatbot-inputs">
