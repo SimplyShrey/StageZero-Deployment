@@ -3,14 +3,17 @@ import os
 import requests
 from fastapi import FastAPI
 from pydantic import BaseModel
+import shutil
+from fastapi import FastAPI, File, UploadFile, Form
 
 app = FastAPI()
 
 # Paths & Configs
+UPLOAD_DIR = "uploads"
 CLASSIFIED_LOGS_JSON = os.path.join(os.getcwd(), "classified_logs.json")
 WATSONX_API_KEY = "L23Q8Etg6haY0c2Z51OM9ToQQAMmvc7lFtyWrmxnhe2A"
 WATSONX_URL = "https://eu-de.ml.cloud.ibm.com"
-PROJECT_ID = "YOUR_PROJECT_ID"
+PROJECT_ID = "f648a793-9b86-460d-b31b-af8de0f66fde"
 
 # --- Models ---
 class CommandRequest(BaseModel):
@@ -49,9 +52,24 @@ def send_to_watsonx():
         return {"status": "error", "detail": str(e)}
 
 @app.post("/run-command")
-def run_command(req: CommandRequest):
-    """Run a backend command from frontend input."""
-    cmd = req.command
-    # Simulate backend execution (replace with real logic)
-    result = f"Executed command: {cmd}"
-    return {"output": result}
+async def run_command(
+    action: str = Form(...), 
+    file: UploadFile | None = File(None)
+):
+    output = ""
+
+    if action == "analyze-log":
+        if not file:
+            return {"output": "No file uploaded."}
+        file_path = os.path.join(UPLOAD_DIR, file.filename)
+        with open(file_path, "wb") as f:
+            shutil.copyfileobj(file.file, f)
+        # Here you can call your classify_logs or full_pipeline
+        output = f"File {file.filename} received and ready for analysis."
+        print(f"[CLI] {output}")
+
+    elif action == "check-status":
+        output = "Server is running."
+        print(f"[CLI] {output}")
+
+    return {"output": output}

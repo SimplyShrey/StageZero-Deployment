@@ -7,12 +7,10 @@ const Chatbot: React.FC = () => {
   const [file, setFile] = useState<File | null>(null);
   const chatEndRef = useRef<HTMLDivElement>(null);
 
-  // Scroll to bottom when messages update
   useEffect(() => {
     chatEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages]);
 
-  // Handle file selection
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files && e.target.files.length > 0) {
       const selectedFile = e.target.files[0];
@@ -21,7 +19,6 @@ const Chatbot: React.FC = () => {
     }
   };
 
-  // Run predefined actions
   const runAction = async (action: "analyze-log" | "check-status") => {
     if (action === "analyze-log" && !file) {
       setMessages(prev => [...prev, { text: "Please upload a file first.", sender: "bot" }]);
@@ -32,9 +29,7 @@ const Chatbot: React.FC = () => {
 
     try {
       const formData = new FormData();
-      if (action === "analyze-log" && file) {
-        formData.append("file", file);
-      }
+      if (action === "analyze-log" && file) formData.append("file", file);
       formData.append("action", action);
 
       const res = await fetch("http://localhost:8000/run-command", {
@@ -50,9 +45,12 @@ const Chatbot: React.FC = () => {
   };
 
   return (
-    <div className="chatbot-wrapper">
+    <div className="chatbot-page">
       <div className="chatbot-container">
-        <div className="chatbot-header">StageZero Chatbot</div>
+        <div className="chatbot-header">
+          <h1>StageZero AI Assistant</h1>
+          <p>Upload logs and get instant insights</p>
+        </div>
 
         <div className="chatbot-messages">
           {messages.map((msg, i) => (
@@ -61,14 +59,17 @@ const Chatbot: React.FC = () => {
           <div ref={chatEndRef} />
         </div>
 
-        <div className="chatbot-input">
-          <input type="file" accept=".zip,.7z" onChange={handleFileChange} />
-        </div>
+        <div className="chatbot-inputs">
+          <label className="file-upload-btn">
+            Upload Log
+            <input type="file" accept=".zip,.7z" onChange={handleFileChange} hidden />
+          </label>
 
-        <div className="chatbot-actions">
-          <button onClick={() => runAction("analyze-log")}>Analyze Uploaded Log</button>
-          <button onClick={() => runAction("check-status")}>Check Server Status</button>
-          <button onClick={() => setMessages([])}>Clear Chat</button>
+          <div className="chatbot-buttons">
+            <button onClick={() => runAction("analyze-log")}>Analyze Uploaded Log</button>
+            <button onClick={() => runAction("check-status")}>Check Server Status</button>
+            <button onClick={() => setMessages([])}>Clear Chat</button>
+          </div>
         </div>
       </div>
     </div>
