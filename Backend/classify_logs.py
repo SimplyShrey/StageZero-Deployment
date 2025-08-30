@@ -1,105 +1,87 @@
-# import os
-# import json
-# import re
-# from collections import defaultdict
-# from Backend.main import extract_iocs
+import os
+import json
+import re
+from collections import defaultdict
 
-# LOGS_FILE = os.path.join(os.getcwd(), "all_logs.json")
-# MITRE_FILE = "mitre_data/enterprise-attack.json"
-# OUTPUT_FILE = os.path.join(os.getcwd(), "classified_logs.json")
-
-# # Load logs
-# with open(LOGS_FILE, "r", encoding="utf-8") as f:
-#     all_logs = json.load(f)
-
-# # Load MITRE ATT&CK JSON
-# with open(MITRE_FILE, "r", encoding="utf-8") as f:
-#     mitre_data = json.load(f)
-
-# # Build searchable technique keyword index
-# techniques = {}
-# for obj in mitre_data["objects"]:
-#     if obj["type"] == "attack-pattern":
-#         tid = next((ref["external_id"] for ref in obj.get("external_references", []) if ref.get("source_name") == "mitre-attack"), None)
-#         name = obj.get("name", "")
-#         desc = obj.get("description", "")
-#         search_blob = f"{name} {desc}".lower()
-#         keywords = set(re.findall(r"[a-z0-9]+", search_blob))  # tokenize
-#         techniques[(tid, name)] = keywords
-
-# classified_logs = []
-
-# for log in all_logs:
-#     text = str(log.get("text", "")).lower()
-#     tokens = set(re.findall(r"[a-z0-9]+", text))
-
-#     matched = []
-#     for (tid, tech_name), keywords in techniques.items():
-#         if tokens & keywords:  # intersection not empty
-#             matched.append({"id": tid, "name": tech_name})
-
-#     classified_logs.append({
-#         "filename": log.get("filename"),
-#         "text": log.get("text"),
-#         "matched": matched,
-#         "iocs": extract_iocs(log.get("text", "")),
-#         "file_risk_score": len(matched) * 1.5 + len(extract_iocs(log.get("text", ""))) * 0.5
-#     })
-
-# # Save output
-# with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
-#     json.dump(classified_logs, f, indent=2)
-
-# print(f"Classified {len(classified_logs)} logs. Results saved to {OUTPUT_FILE}")
-
-import os, json
-
+# --------------------------
+# Paths
+# --------------------------
 LOGS_FILE = os.path.join(os.getcwd(), "all_logs.json")
+MITRE_FILE = os.path.join(os.getcwd(), "mitre_data", "enterprise-attack.json")
 OUTPUT_FILE = os.path.join(os.getcwd(), "classified_logs.json")
 
-# Simple event-to-technique mapping
-EVENT_TO_TECH = {
-    4624: {"id": "T1078", "name": "Valid Accounts"},  # login
-    4688: {"id": "T1059", "name": "Command and Scripting Interpreter"},  # process creation
-}
+# --------------------------
+# Load MITRE ATT&CK JSON
+# --------------------------
+with open(MITRE_FILE, "r", encoding="utf-8") as f:
+    mitre_bundle = json.load(f)
 
-SUSPICIOUS_PROCS = {
-    "powershell": {"id": "T1059.001", "name": "PowerShell"},
-    "rundll32.exe": {"id": "T1218.011", "name": "Signed Binary Proxy Execution: Rundll32"},
-    "lsass.exe": {"id": "T1003.001", "name": "OS Credential Dumping: LSASS Memory"},
-    "wmic.exe": {"id": "T1047", "name": "Windows Management Instrumentation"},
-    "certutil.exe": {"id": "T1105", "name": "Ingress Tool Transfer"},
-    "mshta.exe": {"id": "T1218.005", "name": "Mshta"}
-}
+# Build technique dictionary: id -> name, tactics, and keywords
+mitre_techniques = {}
+for obj in mitre_bundle.get("objects", []):
+    if obj.get("type") == "attack-pattern":
+        # tactics
+        tactics = []
+        if obj.get("kill_chain_phases"):
+            tactics = [phase["phase_name"] for phase in obj["kill_chain_phases"]]
+        elif obj.get("x_mitre_tactics"):
+            tactics = obj["x_mitre_tactics"]
 
-classified_logs = []
+        # keywords: from technique name + optional description
+        keywords = [obj["name"].lower()]
+        desc = obj.get("description", "")
+        if desc:
+            # split into words, keep only alphanum longer than 3 chars
+            desc_words = re.findall(r"\b[a-z0-9]{4,}\b", desc.lower())
+            keywords.extend(desc_words)
 
+        mitre_techniques[obj["id"]] = {
+            "name": obj["name"],
+            "tactics": tactics,
+            "platforms": obj.get("x_mitre_platforms", []),
+            "keywords": set(keywords)
+        }
+
+print(f"Loaded {len(mitre_techniques)} MITRE techniques.")
+
+# --------------------------
+# Load logs
+# --------------------------
 with open(LOGS_FILE, "r", encoding="utf-8") as f:
     logs = json.load(f)
+
+classified_logs = []
 
 for log in logs:
     matched = []
     text = json.dumps(log).lower()
 
-    # Match EventID
-    eid = log.get("EventID")
-    if eid in EVENT_TO_TECH:
-        matched.append(EVENT_TO_TECH[eid])
-
-    # Match process names
-    for proc, tech in SUSPICIOUS_PROCS.items():
-        if proc in text:
-            matched.append(tech)
+    # Scan log for any MITRE technique keywords
+    for mitre_id, tech in mitre_techniques.items():
+        for kw in tech["keywords"]:
+            if kw in text:
+                matched.append({
+                    "id": mitre_id,
+                    "name": tech["name"],
+                    "tactics": tech["tactics"],
+                    "match_type": "keyword",
+                    "score": 1
+                })
+                break  # stop after first keyword match for this technique
 
     classified_logs.append({
         "filename": log.get("filename", "unknown"),
         "matched": matched,
-        "text": text[:200]
+        "text": text[:200] + ("..." if len(text) > 200 else ""),
+        "file_risk_score": len(matched)
     })
 
-# Save
+# --------------------------
+# Save results
+# --------------------------
 with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
     json.dump(classified_logs, f, indent=2)
 
+total_matches = sum(1 for x in classified_logs if x["matched"])
 print(f"✅ Classified {len(classified_logs)} logs")
-print(f"🔍 Matches found in {sum(1 for x in classified_logs if x['matched'])} logs")
+print(f"🔍 Matches found in {total_matches} logs")

@@ -1,15 +1,5883 @@
 {
   "summary": {
-    "total_logs": 0,
-    "distinct_techniques": 0,
-    "tactics_observed": 0,
-    "overall_risk_score": 0,
-    "overall_severity": "low"
+    "total_logs": 122,
+    "distinct_techniques": 823,
+    "tactics_observed": 14,
+    "overall_risk_score": 92015,
+    "overall_severity": "critical"
   },
-  "tactics_breakdown": [],
-  "top_techniques": [],
+  "tactics_breakdown": [
+    {
+      "tactic": "defense-evasion",
+      "count": 29824
+    },
+    {
+      "tactic": "persistence",
+      "count": 19756
+    },
+    {
+      "tactic": "privilege-escalation",
+      "count": 15881
+    },
+    {
+      "tactic": "credential-access",
+      "count": 9287
+    },
+    {
+      "tactic": "execution",
+      "count": 7621
+    },
+    {
+      "tactic": "discovery",
+      "count": 5534
+    },
+    {
+      "tactic": "command-and-control",
+      "count": 5188
+    },
+    {
+      "tactic": "reconnaissance",
+      "count": 5146
+    },
+    {
+      "tactic": "resource-development",
+      "count": 5123
+    },
+    {
+      "tactic": "collection",
+      "count": 4423
+    },
+    {
+      "tactic": "impact",
+      "count": 4367
+    },
+    {
+      "tactic": "lateral-movement",
+      "count": 3994
+    },
+    {
+      "tactic": "initial-access",
+      "count": 2744
+    },
+    {
+      "tactic": "exfiltration",
+      "count": 2007
+    }
+  ],
+  "top_techniques": [
+    {
+      "id": "attack-pattern--00d0b012-8a03-410e-95de-5826bf542de6",
+      "name": "Indicator Removal from Tools",
+      "count": 122
+    },
+    {
+      "id": "attack-pattern--00f90846-cbd1-4fc5-9233-df5c2bf2a662",
+      "name": "Archive via Utility",
+      "count": 122
+    },
+    {
+      "id": "attack-pattern--01df3350-ce05-4bdf-bdf8-0a919a66d4a8",
+      "name": "Malicious Shell Modification",
+      "count": 122
+    },
+    {
+      "id": "attack-pattern--02c5abff-30bf-4703-ab92-1f6072fae939",
+      "name": "Fileless Storage",
+      "count": 122
+    },
+    {
+      "id": "attack-pattern--035bb001-ab69-4a0b-9f6c-2de8b09e1b9d",
+      "name": "Adversary-in-the-Middle",
+      "count": 122
+    },
+    {
+      "id": "attack-pattern--03d7999c-1f4c-42cc-8373-e7690d318104",
+      "name": "System Owner/User Discovery",
+      "count": 122
+    },
+    {
+      "id": "attack-pattern--045d0922-2310-4e60-b5e4-3302302cb3c5",
+      "name": "Rundll32",
+      "count": 122
+    },
+    {
+      "id": "attack-pattern--0470e792-32f8-46b0-a351-652bc35e9336",
+      "name": "Container and Resource Discovery",
+      "count": 122
+    },
+    {
+      "id": "attack-pattern--04fd5427-79c7-44ea-ae13-11b24778ff1c",
+      "name": "Standard Encoding",
+      "count": 122
+    },
+    {
+      "id": "attack-pattern--0533ab23-3f7d-463f-9bd8-634d27e4dee1",
+      "name": "Embedded Payloads",
+      "count": 122
+    },
+    {
+      "id": "attack-pattern--06780952-177c-4247-b978-79c357fb311f",
+      "name": "Plist Modification",
+      "count": 122
+    },
+    {
+      "id": "attack-pattern--06c00069-771a-4d57-8ef5-d3718c1a8771",
+      "name": "Pluggable Authentication Modules",
+      "count": 122
+    },
+    {
+      "id": "attack-pattern--086952c4-5b90-4185-b573-02bad8e11953",
+      "name": "HISTCONTROL",
+      "count": 122
+    },
+    {
+      "id": "attack-pattern--09312b1a-c3c6-4b45-9844-3ccc78e5d82f",
+      "name": "Gather Victim Host Information",
+      "count": 122
+    },
+    {
+      "id": "attack-pattern--0979abf9-4e26-43ec-9b6e-54efc4e70fca",
+      "name": "Digital Certificates",
+      "count": 122
+    }
+  ],
   "ioc_summary": {},
-  "files": [],
-  "narrative": "No significant malicious patterns detected.",
-  "generated_at": "2025-08-30T04:17:26.907667Z"
+  "files": [
+    {
+      "filename": "logs\\AttackArtifacts\\AdvancedSimulation_8bdd81b5-86e8-4dd4-9613-9dfe427be5e7.log",
+      "risk_score": 823,
+      "top_techniques": [
+        {
+          "id": "attack-pattern--0042a9f5-f053-4769-b3ef-9ad018dfa298",
+          "name": "Extra Window Memory Injection",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005a06c6-14bf-4118-afa0-ebcd8aebb0c9",
+          "name": "Scheduled Task",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005cc321-08ce-4d17-b1ea-cb5275926520",
+          "name": "Socket Filters",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00d0b012-8a03-410e-95de-5826bf542de6",
+          "name": "Indicator Removal from Tools",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00f90846-cbd1-4fc5-9233-df5c2bf2a662",
+          "name": "Archive via Utility",
+          "match_type": "keyword",
+          "score": 1
+        }
+      ],
+      "ioc_counts": {
+        "ipv4": 0,
+        "ipv6": 0,
+        "url": 0,
+        "domain": 0,
+        "email": 0,
+        "hash": 0,
+        "filepath": 0,
+        "registry": 0,
+        "timestamp": 0
+      }
+    },
+    {
+      "filename": "logs\\AttackArtifacts\\MDE_Correlation_8bdd81b5-86e8-4dd4-9613-9dfe427be5e7.json",
+      "risk_score": 823,
+      "top_techniques": [
+        {
+          "id": "attack-pattern--0042a9f5-f053-4769-b3ef-9ad018dfa298",
+          "name": "Extra Window Memory Injection",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005a06c6-14bf-4118-afa0-ebcd8aebb0c9",
+          "name": "Scheduled Task",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005cc321-08ce-4d17-b1ea-cb5275926520",
+          "name": "Socket Filters",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00d0b012-8a03-410e-95de-5826bf542de6",
+          "name": "Indicator Removal from Tools",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00f90846-cbd1-4fc5-9233-df5c2bf2a662",
+          "name": "Archive via Utility",
+          "match_type": "keyword",
+          "score": 1
+        }
+      ],
+      "ioc_counts": {
+        "ipv4": 0,
+        "ipv6": 0,
+        "url": 0,
+        "domain": 0,
+        "email": 0,
+        "hash": 0,
+        "filepath": 0,
+        "registry": 0,
+        "timestamp": 0
+      }
+    },
+    {
+      "filename": "logs\\AttackArtifacts\\registry_HKCU__Software_Microsoft_Windows_CurrentVersion_Internet Settings.json",
+      "risk_score": 823,
+      "top_techniques": [
+        {
+          "id": "attack-pattern--0042a9f5-f053-4769-b3ef-9ad018dfa298",
+          "name": "Extra Window Memory Injection",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005a06c6-14bf-4118-afa0-ebcd8aebb0c9",
+          "name": "Scheduled Task",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005cc321-08ce-4d17-b1ea-cb5275926520",
+          "name": "Socket Filters",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00d0b012-8a03-410e-95de-5826bf542de6",
+          "name": "Indicator Removal from Tools",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00f90846-cbd1-4fc5-9233-df5c2bf2a662",
+          "name": "Archive via Utility",
+          "match_type": "keyword",
+          "score": 1
+        }
+      ],
+      "ioc_counts": {
+        "ipv4": 0,
+        "ipv6": 0,
+        "url": 0,
+        "domain": 0,
+        "email": 0,
+        "hash": 0,
+        "filepath": 0,
+        "registry": 0,
+        "timestamp": 0
+      }
+    },
+    {
+      "filename": "logs\\AttackArtifacts\\registry_HKLM__SOFTWARE_Microsoft_Windows NT_CurrentVersion_Winlogon.json",
+      "risk_score": 823,
+      "top_techniques": [
+        {
+          "id": "attack-pattern--0042a9f5-f053-4769-b3ef-9ad018dfa298",
+          "name": "Extra Window Memory Injection",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005a06c6-14bf-4118-afa0-ebcd8aebb0c9",
+          "name": "Scheduled Task",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005cc321-08ce-4d17-b1ea-cb5275926520",
+          "name": "Socket Filters",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00d0b012-8a03-410e-95de-5826bf542de6",
+          "name": "Indicator Removal from Tools",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00f90846-cbd1-4fc5-9233-df5c2bf2a662",
+          "name": "Archive via Utility",
+          "match_type": "keyword",
+          "score": 1
+        }
+      ],
+      "ioc_counts": {
+        "ipv4": 0,
+        "ipv6": 0,
+        "url": 0,
+        "domain": 0,
+        "email": 0,
+        "hash": 0,
+        "filepath": 0,
+        "registry": 0,
+        "timestamp": 0
+      }
+    },
+    {
+      "filename": "logs\\AttackArtifacts\\registry_HKLM__SOFTWARE_Microsoft_Windows_CurrentVersion_Policies_System.json",
+      "risk_score": 823,
+      "top_techniques": [
+        {
+          "id": "attack-pattern--0042a9f5-f053-4769-b3ef-9ad018dfa298",
+          "name": "Extra Window Memory Injection",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005a06c6-14bf-4118-afa0-ebcd8aebb0c9",
+          "name": "Scheduled Task",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005cc321-08ce-4d17-b1ea-cb5275926520",
+          "name": "Socket Filters",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00d0b012-8a03-410e-95de-5826bf542de6",
+          "name": "Indicator Removal from Tools",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00f90846-cbd1-4fc5-9233-df5c2bf2a662",
+          "name": "Archive via Utility",
+          "match_type": "keyword",
+          "score": 1
+        }
+      ],
+      "ioc_counts": {
+        "ipv4": 0,
+        "ipv6": 0,
+        "url": 0,
+        "domain": 0,
+        "email": 0,
+        "hash": 0,
+        "filepath": 0,
+        "registry": 0,
+        "timestamp": 0
+      }
+    },
+    {
+      "filename": "logs\\AttackArtifacts\\registry_HKLM__SYSTEM_CurrentControlSet_Control_Lsa.json",
+      "risk_score": 823,
+      "top_techniques": [
+        {
+          "id": "attack-pattern--0042a9f5-f053-4769-b3ef-9ad018dfa298",
+          "name": "Extra Window Memory Injection",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005a06c6-14bf-4118-afa0-ebcd8aebb0c9",
+          "name": "Scheduled Task",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005cc321-08ce-4d17-b1ea-cb5275926520",
+          "name": "Socket Filters",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00d0b012-8a03-410e-95de-5826bf542de6",
+          "name": "Indicator Removal from Tools",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00f90846-cbd1-4fc5-9233-df5c2bf2a662",
+          "name": "Archive via Utility",
+          "match_type": "keyword",
+          "score": 1
+        }
+      ],
+      "ioc_counts": {
+        "ipv4": 0,
+        "ipv6": 0,
+        "url": 0,
+        "domain": 0,
+        "email": 0,
+        "hash": 0,
+        "filepath": 0,
+        "registry": 0,
+        "timestamp": 0
+      }
+    },
+    {
+      "filename": "logs\\AttackArtifacts\\registry_HKLM__SYSTEM_CurrentControlSet_Services_W32Time_Parameters.json",
+      "risk_score": 823,
+      "top_techniques": [
+        {
+          "id": "attack-pattern--0042a9f5-f053-4769-b3ef-9ad018dfa298",
+          "name": "Extra Window Memory Injection",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005a06c6-14bf-4118-afa0-ebcd8aebb0c9",
+          "name": "Scheduled Task",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005cc321-08ce-4d17-b1ea-cb5275926520",
+          "name": "Socket Filters",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00d0b012-8a03-410e-95de-5826bf542de6",
+          "name": "Indicator Removal from Tools",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00f90846-cbd1-4fc5-9233-df5c2bf2a662",
+          "name": "Archive via Utility",
+          "match_type": "keyword",
+          "score": 1
+        }
+      ],
+      "ioc_counts": {
+        "ipv4": 0,
+        "ipv6": 0,
+        "url": 0,
+        "domain": 0,
+        "email": 0,
+        "hash": 0,
+        "filepath": 0,
+        "registry": 0,
+        "timestamp": 0
+      }
+    },
+    {
+      "filename": "logs\\Autoruns\\Autoruns.txt",
+      "risk_score": 823,
+      "top_techniques": [
+        {
+          "id": "attack-pattern--0042a9f5-f053-4769-b3ef-9ad018dfa298",
+          "name": "Extra Window Memory Injection",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005a06c6-14bf-4118-afa0-ebcd8aebb0c9",
+          "name": "Scheduled Task",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005cc321-08ce-4d17-b1ea-cb5275926520",
+          "name": "Socket Filters",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00d0b012-8a03-410e-95de-5826bf542de6",
+          "name": "Indicator Removal from Tools",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00f90846-cbd1-4fc5-9233-df5c2bf2a662",
+          "name": "Archive via Utility",
+          "match_type": "keyword",
+          "score": 1
+        }
+      ],
+      "ioc_counts": {
+        "ipv4": 0,
+        "ipv6": 0,
+        "url": 0,
+        "domain": 0,
+        "email": 0,
+        "hash": 0,
+        "filepath": 0,
+        "registry": 0,
+        "timestamp": 0
+      }
+    },
+    {
+      "filename": "logs\\Temp Directories\\Admin_TempDirFiles.txt",
+      "risk_score": 823,
+      "top_techniques": [
+        {
+          "id": "attack-pattern--0042a9f5-f053-4769-b3ef-9ad018dfa298",
+          "name": "Extra Window Memory Injection",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005a06c6-14bf-4118-afa0-ebcd8aebb0c9",
+          "name": "Scheduled Task",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005cc321-08ce-4d17-b1ea-cb5275926520",
+          "name": "Socket Filters",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00d0b012-8a03-410e-95de-5826bf542de6",
+          "name": "Indicator Removal from Tools",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00f90846-cbd1-4fc5-9233-df5c2bf2a662",
+          "name": "Archive via Utility",
+          "match_type": "keyword",
+          "score": 1
+        }
+      ],
+      "ioc_counts": {
+        "ipv4": 0,
+        "ipv6": 0,
+        "url": 0,
+        "domain": 0,
+        "email": 0,
+        "hash": 0,
+        "filepath": 0,
+        "registry": 0,
+        "timestamp": 0
+      }
+    },
+    {
+      "filename": "logs\\Users and Groups\\LocalGroups.txt",
+      "risk_score": 823,
+      "top_techniques": [
+        {
+          "id": "attack-pattern--0042a9f5-f053-4769-b3ef-9ad018dfa298",
+          "name": "Extra Window Memory Injection",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005a06c6-14bf-4118-afa0-ebcd8aebb0c9",
+          "name": "Scheduled Task",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005cc321-08ce-4d17-b1ea-cb5275926520",
+          "name": "Socket Filters",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00d0b012-8a03-410e-95de-5826bf542de6",
+          "name": "Indicator Removal from Tools",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00f90846-cbd1-4fc5-9233-df5c2bf2a662",
+          "name": "Archive via Utility",
+          "match_type": "keyword",
+          "score": 1
+        }
+      ],
+      "ioc_counts": {
+        "ipv4": 0,
+        "ipv6": 0,
+        "url": 0,
+        "domain": 0,
+        "email": 0,
+        "hash": 0,
+        "filepath": 0,
+        "registry": 0,
+        "timestamp": 0
+      }
+    },
+    {
+      "filename": "logs\\System Information\\systeminfo.txt",
+      "risk_score": 822,
+      "top_techniques": [
+        {
+          "id": "attack-pattern--0042a9f5-f053-4769-b3ef-9ad018dfa298",
+          "name": "Extra Window Memory Injection",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005a06c6-14bf-4118-afa0-ebcd8aebb0c9",
+          "name": "Scheduled Task",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005cc321-08ce-4d17-b1ea-cb5275926520",
+          "name": "Socket Filters",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00d0b012-8a03-410e-95de-5826bf542de6",
+          "name": "Indicator Removal from Tools",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00f90846-cbd1-4fc5-9233-df5c2bf2a662",
+          "name": "Archive via Utility",
+          "match_type": "keyword",
+          "score": 1
+        }
+      ],
+      "ioc_counts": {
+        "ipv4": 0,
+        "ipv6": 0,
+        "url": 0,
+        "domain": 0,
+        "email": 0,
+        "hash": 0,
+        "filepath": 0,
+        "registry": 0,
+        "timestamp": 0
+      }
+    },
+    {
+      "filename": "logs\\System Information\\SystemInformation.txt",
+      "risk_score": 822,
+      "top_techniques": [
+        {
+          "id": "attack-pattern--0042a9f5-f053-4769-b3ef-9ad018dfa298",
+          "name": "Extra Window Memory Injection",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005a06c6-14bf-4118-afa0-ebcd8aebb0c9",
+          "name": "Scheduled Task",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005cc321-08ce-4d17-b1ea-cb5275926520",
+          "name": "Socket Filters",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00d0b012-8a03-410e-95de-5826bf542de6",
+          "name": "Indicator Removal from Tools",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00f90846-cbd1-4fc5-9233-df5c2bf2a662",
+          "name": "Archive via Utility",
+          "match_type": "keyword",
+          "score": 1
+        }
+      ],
+      "ioc_counts": {
+        "ipv4": 0,
+        "ipv6": 0,
+        "url": 0,
+        "domain": 0,
+        "email": 0,
+        "hash": 0,
+        "filepath": 0,
+        "registry": 0,
+        "timestamp": 0
+      }
+    },
+    {
+      "filename": "logs\\WdSupportLogs\\MpCmdRunLog.txt",
+      "risk_score": 822,
+      "top_techniques": [
+        {
+          "id": "attack-pattern--0042a9f5-f053-4769-b3ef-9ad018dfa298",
+          "name": "Extra Window Memory Injection",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005a06c6-14bf-4118-afa0-ebcd8aebb0c9",
+          "name": "Scheduled Task",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005cc321-08ce-4d17-b1ea-cb5275926520",
+          "name": "Socket Filters",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00d0b012-8a03-410e-95de-5826bf542de6",
+          "name": "Indicator Removal from Tools",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00f90846-cbd1-4fc5-9233-df5c2bf2a662",
+          "name": "Archive via Utility",
+          "match_type": "keyword",
+          "score": 1
+        }
+      ],
+      "ioc_counts": {
+        "ipv4": 0,
+        "ipv6": 0,
+        "url": 0,
+        "domain": 0,
+        "email": 0,
+        "hash": 0,
+        "filepath": 0,
+        "registry": 0,
+        "timestamp": 0
+      }
+    },
+    {
+      "filename": "logs\\AttackArtifacts\\wmi_persistence_advanced.json",
+      "risk_score": 821,
+      "top_techniques": [
+        {
+          "id": "attack-pattern--0042a9f5-f053-4769-b3ef-9ad018dfa298",
+          "name": "Extra Window Memory Injection",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005a06c6-14bf-4118-afa0-ebcd8aebb0c9",
+          "name": "Scheduled Task",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005cc321-08ce-4d17-b1ea-cb5275926520",
+          "name": "Socket Filters",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00d0b012-8a03-410e-95de-5826bf542de6",
+          "name": "Indicator Removal from Tools",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00f90846-cbd1-4fc5-9233-df5c2bf2a662",
+          "name": "Archive via Utility",
+          "match_type": "keyword",
+          "score": 1
+        }
+      ],
+      "ioc_counts": {
+        "ipv4": 0,
+        "ipv6": 0,
+        "url": 0,
+        "domain": 0,
+        "email": 0,
+        "hash": 0,
+        "filepath": 0,
+        "registry": 0,
+        "timestamp": 0
+      }
+    },
+    {
+      "filename": "logs\\WdSupportLogs\\collection_log.txt",
+      "risk_score": 821,
+      "top_techniques": [
+        {
+          "id": "attack-pattern--0042a9f5-f053-4769-b3ef-9ad018dfa298",
+          "name": "Extra Window Memory Injection",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005a06c6-14bf-4118-afa0-ebcd8aebb0c9",
+          "name": "Scheduled Task",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005cc321-08ce-4d17-b1ea-cb5275926520",
+          "name": "Socket Filters",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00d0b012-8a03-410e-95de-5826bf542de6",
+          "name": "Indicator Removal from Tools",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00f90846-cbd1-4fc5-9233-df5c2bf2a662",
+          "name": "Archive via Utility",
+          "match_type": "keyword",
+          "score": 1
+        }
+      ],
+      "ioc_counts": {
+        "ipv4": 0,
+        "ipv6": 0,
+        "url": 0,
+        "domain": 0,
+        "email": 0,
+        "hash": 0,
+        "filepath": 0,
+        "registry": 0,
+        "timestamp": 0
+      }
+    },
+    {
+      "filename": "logs\\Installed Programs\\hklm_Software_Microsoft_Windows_CurrentVersion_Uninstall.txt",
+      "risk_score": 820,
+      "top_techniques": [
+        {
+          "id": "attack-pattern--0042a9f5-f053-4769-b3ef-9ad018dfa298",
+          "name": "Extra Window Memory Injection",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005a06c6-14bf-4118-afa0-ebcd8aebb0c9",
+          "name": "Scheduled Task",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005cc321-08ce-4d17-b1ea-cb5275926520",
+          "name": "Socket Filters",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00d0b012-8a03-410e-95de-5826bf542de6",
+          "name": "Indicator Removal from Tools",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00f90846-cbd1-4fc5-9233-df5c2bf2a662",
+          "name": "Archive via Utility",
+          "match_type": "keyword",
+          "score": 1
+        }
+      ],
+      "ioc_counts": {
+        "ipv4": 0,
+        "ipv6": 0,
+        "url": 0,
+        "domain": 0,
+        "email": 0,
+        "hash": 0,
+        "filepath": 0,
+        "registry": 0,
+        "timestamp": 0
+      }
+    },
+    {
+      "filename": "logs\\Prefetch Files\\PrefetchFilesList.txt",
+      "risk_score": 820,
+      "top_techniques": [
+        {
+          "id": "attack-pattern--0042a9f5-f053-4769-b3ef-9ad018dfa298",
+          "name": "Extra Window Memory Injection",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005a06c6-14bf-4118-afa0-ebcd8aebb0c9",
+          "name": "Scheduled Task",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005cc321-08ce-4d17-b1ea-cb5275926520",
+          "name": "Socket Filters",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00d0b012-8a03-410e-95de-5826bf542de6",
+          "name": "Indicator Removal from Tools",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00f90846-cbd1-4fc5-9233-df5c2bf2a662",
+          "name": "Archive via Utility",
+          "match_type": "keyword",
+          "score": 1
+        }
+      ],
+      "ioc_counts": {
+        "ipv4": 0,
+        "ipv6": 0,
+        "url": 0,
+        "domain": 0,
+        "email": 0,
+        "hash": 0,
+        "filepath": 0,
+        "registry": 0,
+        "timestamp": 0
+      }
+    },
+    {
+      "filename": "logs\\SystemInfo\\systeminfo.txt",
+      "risk_score": 819,
+      "top_techniques": [
+        {
+          "id": "attack-pattern--0042a9f5-f053-4769-b3ef-9ad018dfa298",
+          "name": "Extra Window Memory Injection",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005a06c6-14bf-4118-afa0-ebcd8aebb0c9",
+          "name": "Scheduled Task",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005cc321-08ce-4d17-b1ea-cb5275926520",
+          "name": "Socket Filters",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00d0b012-8a03-410e-95de-5826bf542de6",
+          "name": "Indicator Removal from Tools",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00f90846-cbd1-4fc5-9233-df5c2bf2a662",
+          "name": "Archive via Utility",
+          "match_type": "keyword",
+          "score": 1
+        }
+      ],
+      "ioc_counts": {
+        "ipv4": 0,
+        "ipv6": 0,
+        "url": 0,
+        "domain": 0,
+        "email": 0,
+        "hash": 0,
+        "filepath": 0,
+        "registry": 0,
+        "timestamp": 0
+      }
+    },
+    {
+      "filename": "logs\\Installed Programs\\hklm_Software_Wow6432Node_Microsoft_Windows_CurrentVersion_Uninstall.txt",
+      "risk_score": 817,
+      "top_techniques": [
+        {
+          "id": "attack-pattern--0042a9f5-f053-4769-b3ef-9ad018dfa298",
+          "name": "Extra Window Memory Injection",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005a06c6-14bf-4118-afa0-ebcd8aebb0c9",
+          "name": "Scheduled Task",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005cc321-08ce-4d17-b1ea-cb5275926520",
+          "name": "Socket Filters",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00d0b012-8a03-410e-95de-5826bf542de6",
+          "name": "Indicator Removal from Tools",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00f90846-cbd1-4fc5-9233-df5c2bf2a662",
+          "name": "Archive via Utility",
+          "match_type": "keyword",
+          "score": 1
+        }
+      ],
+      "ioc_counts": {
+        "ipv4": 0,
+        "ipv6": 0,
+        "url": 0,
+        "domain": 0,
+        "email": 0,
+        "hash": 0,
+        "filepath": 0,
+        "registry": 0,
+        "timestamp": 0
+      }
+    },
+    {
+      "filename": "logs\\MDE_Report\\Summary.txt",
+      "risk_score": 817,
+      "top_techniques": [
+        {
+          "id": "attack-pattern--0042a9f5-f053-4769-b3ef-9ad018dfa298",
+          "name": "Extra Window Memory Injection",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005a06c6-14bf-4118-afa0-ebcd8aebb0c9",
+          "name": "Scheduled Task",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005cc321-08ce-4d17-b1ea-cb5275926520",
+          "name": "Socket Filters",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00d0b012-8a03-410e-95de-5826bf542de6",
+          "name": "Indicator Removal from Tools",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00f90846-cbd1-4fc5-9233-df5c2bf2a662",
+          "name": "Archive via Utility",
+          "match_type": "keyword",
+          "score": 1
+        }
+      ],
+      "ioc_counts": {
+        "ipv4": 0,
+        "ipv6": 0,
+        "url": 0,
+        "domain": 0,
+        "email": 0,
+        "hash": 0,
+        "filepath": 0,
+        "registry": 0,
+        "timestamp": 0
+      }
+    },
+    {
+      "filename": "logs\\AttackArtifacts\\ntds_access_attempt.json",
+      "risk_score": 813,
+      "top_techniques": [
+        {
+          "id": "attack-pattern--0042a9f5-f053-4769-b3ef-9ad018dfa298",
+          "name": "Extra Window Memory Injection",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005a06c6-14bf-4118-afa0-ebcd8aebb0c9",
+          "name": "Scheduled Task",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005cc321-08ce-4d17-b1ea-cb5275926520",
+          "name": "Socket Filters",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00d0b012-8a03-410e-95de-5826bf542de6",
+          "name": "Indicator Removal from Tools",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00f90846-cbd1-4fc5-9233-df5c2bf2a662",
+          "name": "Archive via Utility",
+          "match_type": "keyword",
+          "score": 1
+        }
+      ],
+      "ioc_counts": {
+        "ipv4": 0,
+        "ipv6": 0,
+        "url": 0,
+        "domain": 0,
+        "email": 0,
+        "hash": 0,
+        "filepath": 0,
+        "registry": 0,
+        "timestamp": 0
+      }
+    },
+    {
+      "filename": "logs\\Installed Programs\\S-1-5-21-382297125-3180263876-1941408969-1001_Software_Microsoft_Windows_CurrentVersion_Uninstall.txt",
+      "risk_score": 807,
+      "top_techniques": [
+        {
+          "id": "attack-pattern--0042a9f5-f053-4769-b3ef-9ad018dfa298",
+          "name": "Extra Window Memory Injection",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005a06c6-14bf-4118-afa0-ebcd8aebb0c9",
+          "name": "Scheduled Task",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005cc321-08ce-4d17-b1ea-cb5275926520",
+          "name": "Socket Filters",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00d0b012-8a03-410e-95de-5826bf542de6",
+          "name": "Indicator Removal from Tools",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00f90846-cbd1-4fc5-9233-df5c2bf2a662",
+          "name": "Archive via Utility",
+          "match_type": "keyword",
+          "score": 1
+        }
+      ],
+      "ioc_counts": {
+        "ipv4": 0,
+        "ipv6": 0,
+        "url": 0,
+        "domain": 0,
+        "email": 0,
+        "hash": 0,
+        "filepath": 0,
+        "registry": 0,
+        "timestamp": 0
+      }
+    },
+    {
+      "filename": "logs\\System Information\\dns_cache.txt",
+      "risk_score": 803,
+      "top_techniques": [
+        {
+          "id": "attack-pattern--0042a9f5-f053-4769-b3ef-9ad018dfa298",
+          "name": "Extra Window Memory Injection",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005a06c6-14bf-4118-afa0-ebcd8aebb0c9",
+          "name": "Scheduled Task",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005cc321-08ce-4d17-b1ea-cb5275926520",
+          "name": "Socket Filters",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00d0b012-8a03-410e-95de-5826bf542de6",
+          "name": "Indicator Removal from Tools",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00f90846-cbd1-4fc5-9233-df5c2bf2a662",
+          "name": "Archive via Utility",
+          "match_type": "keyword",
+          "score": 1
+        }
+      ],
+      "ioc_counts": {
+        "ipv4": 0,
+        "ipv6": 0,
+        "url": 0,
+        "domain": 0,
+        "email": 0,
+        "hash": 0,
+        "filepath": 0,
+        "registry": 0,
+        "timestamp": 0
+      }
+    },
+    {
+      "filename": "logs\\System Information\\computer_details.json",
+      "risk_score": 799,
+      "top_techniques": [
+        {
+          "id": "attack-pattern--0042a9f5-f053-4769-b3ef-9ad018dfa298",
+          "name": "Extra Window Memory Injection",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005a06c6-14bf-4118-afa0-ebcd8aebb0c9",
+          "name": "Scheduled Task",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005cc321-08ce-4d17-b1ea-cb5275926520",
+          "name": "Socket Filters",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00d0b012-8a03-410e-95de-5826bf542de6",
+          "name": "Indicator Removal from Tools",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00f90846-cbd1-4fc5-9233-df5c2bf2a662",
+          "name": "Archive via Utility",
+          "match_type": "keyword",
+          "score": 1
+        }
+      ],
+      "ioc_counts": {
+        "ipv4": 0,
+        "ipv6": 0,
+        "url": 0,
+        "domain": 0,
+        "email": 0,
+        "hash": 0,
+        "filepath": 0,
+        "registry": 0,
+        "timestamp": 0
+      }
+    },
+    {
+      "filename": "logs\\System Information\\ipconfig.txt",
+      "risk_score": 799,
+      "top_techniques": [
+        {
+          "id": "attack-pattern--0042a9f5-f053-4769-b3ef-9ad018dfa298",
+          "name": "Extra Window Memory Injection",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005a06c6-14bf-4118-afa0-ebcd8aebb0c9",
+          "name": "Scheduled Task",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005cc321-08ce-4d17-b1ea-cb5275926520",
+          "name": "Socket Filters",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00d0b012-8a03-410e-95de-5826bf542de6",
+          "name": "Indicator Removal from Tools",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00f90846-cbd1-4fc5-9233-df5c2bf2a662",
+          "name": "Archive via Utility",
+          "match_type": "keyword",
+          "score": 1
+        }
+      ],
+      "ioc_counts": {
+        "ipv4": 0,
+        "ipv6": 0,
+        "url": 0,
+        "domain": 0,
+        "email": 0,
+        "hash": 0,
+        "filepath": 0,
+        "registry": 0,
+        "timestamp": 0
+      }
+    },
+    {
+      "filename": "logs\\AttackArtifacts\\HOW_TO_DECRYPT.txt",
+      "risk_score": 798,
+      "top_techniques": [
+        {
+          "id": "attack-pattern--0042a9f5-f053-4769-b3ef-9ad018dfa298",
+          "name": "Extra Window Memory Injection",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005a06c6-14bf-4118-afa0-ebcd8aebb0c9",
+          "name": "Scheduled Task",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005cc321-08ce-4d17-b1ea-cb5275926520",
+          "name": "Socket Filters",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00d0b012-8a03-410e-95de-5826bf542de6",
+          "name": "Indicator Removal from Tools",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00f90846-cbd1-4fc5-9233-df5c2bf2a662",
+          "name": "Archive via Utility",
+          "match_type": "keyword",
+          "score": 1
+        }
+      ],
+      "ioc_counts": {
+        "ipv4": 0,
+        "ipv6": 0,
+        "url": 0,
+        "domain": 0,
+        "email": 0,
+        "hash": 0,
+        "filepath": 0,
+        "registry": 0,
+        "timestamp": 0
+      }
+    },
+    {
+      "filename": "logs\\SystemInfo\\dns_cache.txt",
+      "risk_score": 792,
+      "top_techniques": [
+        {
+          "id": "attack-pattern--0042a9f5-f053-4769-b3ef-9ad018dfa298",
+          "name": "Extra Window Memory Injection",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005a06c6-14bf-4118-afa0-ebcd8aebb0c9",
+          "name": "Scheduled Task",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005cc321-08ce-4d17-b1ea-cb5275926520",
+          "name": "Socket Filters",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00d0b012-8a03-410e-95de-5826bf542de6",
+          "name": "Indicator Removal from Tools",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00f90846-cbd1-4fc5-9233-df5c2bf2a662",
+          "name": "Archive via Utility",
+          "match_type": "keyword",
+          "score": 1
+        }
+      ],
+      "ioc_counts": {
+        "ipv4": 0,
+        "ipv6": 0,
+        "url": 0,
+        "domain": 0,
+        "email": 0,
+        "hash": 0,
+        "filepath": 0,
+        "registry": 0,
+        "timestamp": 0
+      }
+    },
+    {
+      "filename": "logs\\AttackArtifacts\\service_discovery.json",
+      "risk_score": 790,
+      "top_techniques": [
+        {
+          "id": "attack-pattern--0042a9f5-f053-4769-b3ef-9ad018dfa298",
+          "name": "Extra Window Memory Injection",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005a06c6-14bf-4118-afa0-ebcd8aebb0c9",
+          "name": "Scheduled Task",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005cc321-08ce-4d17-b1ea-cb5275926520",
+          "name": "Socket Filters",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00d0b012-8a03-410e-95de-5826bf542de6",
+          "name": "Indicator Removal from Tools",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00f90846-cbd1-4fc5-9233-df5c2bf2a662",
+          "name": "Archive via Utility",
+          "match_type": "keyword",
+          "score": 1
+        }
+      ],
+      "ioc_counts": {
+        "ipv4": 0,
+        "ipv6": 0,
+        "url": 0,
+        "domain": 0,
+        "email": 0,
+        "hash": 0,
+        "filepath": 0,
+        "registry": 0,
+        "timestamp": 0
+      }
+    },
+    {
+      "filename": "logs\\SystemInfo\\ipconfig.txt",
+      "risk_score": 790,
+      "top_techniques": [
+        {
+          "id": "attack-pattern--0042a9f5-f053-4769-b3ef-9ad018dfa298",
+          "name": "Extra Window Memory Injection",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005a06c6-14bf-4118-afa0-ebcd8aebb0c9",
+          "name": "Scheduled Task",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005cc321-08ce-4d17-b1ea-cb5275926520",
+          "name": "Socket Filters",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00d0b012-8a03-410e-95de-5826bf542de6",
+          "name": "Indicator Removal from Tools",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00f90846-cbd1-4fc5-9233-df5c2bf2a662",
+          "name": "Archive via Utility",
+          "match_type": "keyword",
+          "score": 1
+        }
+      ],
+      "ioc_counts": {
+        "ipv4": 0,
+        "ipv6": 0,
+        "url": 0,
+        "domain": 0,
+        "email": 0,
+        "hash": 0,
+        "filepath": 0,
+        "registry": 0,
+        "timestamp": 0
+      }
+    },
+    {
+      "filename": "logs\\AttackArtifacts\\account_discovery_advanced.json",
+      "risk_score": 788,
+      "top_techniques": [
+        {
+          "id": "attack-pattern--0042a9f5-f053-4769-b3ef-9ad018dfa298",
+          "name": "Extra Window Memory Injection",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005a06c6-14bf-4118-afa0-ebcd8aebb0c9",
+          "name": "Scheduled Task",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005cc321-08ce-4d17-b1ea-cb5275926520",
+          "name": "Socket Filters",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00d0b012-8a03-410e-95de-5826bf542de6",
+          "name": "Indicator Removal from Tools",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00f90846-cbd1-4fc5-9233-df5c2bf2a662",
+          "name": "Archive via Utility",
+          "match_type": "keyword",
+          "score": 1
+        }
+      ],
+      "ioc_counts": {
+        "ipv4": 0,
+        "ipv6": 0,
+        "url": 0,
+        "domain": 0,
+        "email": 0,
+        "hash": 0,
+        "filepath": 0,
+        "registry": 0,
+        "timestamp": 0
+      }
+    },
+    {
+      "filename": "logs\\Network Connections\\DnsCache.txt",
+      "risk_score": 787,
+      "top_techniques": [
+        {
+          "id": "attack-pattern--0042a9f5-f053-4769-b3ef-9ad018dfa298",
+          "name": "Extra Window Memory Injection",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005a06c6-14bf-4118-afa0-ebcd8aebb0c9",
+          "name": "Scheduled Task",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005cc321-08ce-4d17-b1ea-cb5275926520",
+          "name": "Socket Filters",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00d0b012-8a03-410e-95de-5826bf542de6",
+          "name": "Indicator Removal from Tools",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00f90846-cbd1-4fc5-9233-df5c2bf2a662",
+          "name": "Archive via Utility",
+          "match_type": "keyword",
+          "score": 1
+        }
+      ],
+      "ioc_counts": {
+        "ipv4": 0,
+        "ipv6": 0,
+        "url": 0,
+        "domain": 0,
+        "email": 0,
+        "hash": 0,
+        "filepath": 0,
+        "registry": 0,
+        "timestamp": 0
+      }
+    },
+    {
+      "filename": "logs\\AttackArtifacts\\log_clear_System.json",
+      "risk_score": 784,
+      "top_techniques": [
+        {
+          "id": "attack-pattern--0042a9f5-f053-4769-b3ef-9ad018dfa298",
+          "name": "Extra Window Memory Injection",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005a06c6-14bf-4118-afa0-ebcd8aebb0c9",
+          "name": "Scheduled Task",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005cc321-08ce-4d17-b1ea-cb5275926520",
+          "name": "Socket Filters",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00d0b012-8a03-410e-95de-5826bf542de6",
+          "name": "Indicator Removal from Tools",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00f90846-cbd1-4fc5-9233-df5c2bf2a662",
+          "name": "Archive via Utility",
+          "match_type": "keyword",
+          "score": 1
+        }
+      ],
+      "ioc_counts": {
+        "ipv4": 0,
+        "ipv6": 0,
+        "url": 0,
+        "domain": 0,
+        "email": 0,
+        "hash": 0,
+        "filepath": 0,
+        "registry": 0,
+        "timestamp": 0
+      }
+    },
+    {
+      "filename": "logs\\AttackArtifacts\\recovery_inhibit_1922755157.json",
+      "risk_score": 783,
+      "top_techniques": [
+        {
+          "id": "attack-pattern--0042a9f5-f053-4769-b3ef-9ad018dfa298",
+          "name": "Extra Window Memory Injection",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005a06c6-14bf-4118-afa0-ebcd8aebb0c9",
+          "name": "Scheduled Task",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005cc321-08ce-4d17-b1ea-cb5275926520",
+          "name": "Socket Filters",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00d0b012-8a03-410e-95de-5826bf542de6",
+          "name": "Indicator Removal from Tools",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00f90846-cbd1-4fc5-9233-df5c2bf2a662",
+          "name": "Archive via Utility",
+          "match_type": "keyword",
+          "score": 1
+        }
+      ],
+      "ioc_counts": {
+        "ipv4": 0,
+        "ipv6": 0,
+        "url": 0,
+        "domain": 0,
+        "email": 0,
+        "hash": 0,
+        "filepath": 0,
+        "registry": 0,
+        "timestamp": 0
+      }
+    },
+    {
+      "filename": "logs\\AttackArtifacts\\recovery_inhibit_1888694303.json",
+      "risk_score": 782,
+      "top_techniques": [
+        {
+          "id": "attack-pattern--0042a9f5-f053-4769-b3ef-9ad018dfa298",
+          "name": "Extra Window Memory Injection",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005a06c6-14bf-4118-afa0-ebcd8aebb0c9",
+          "name": "Scheduled Task",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005cc321-08ce-4d17-b1ea-cb5275926520",
+          "name": "Socket Filters",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00d0b012-8a03-410e-95de-5826bf542de6",
+          "name": "Indicator Removal from Tools",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00f90846-cbd1-4fc5-9233-df5c2bf2a662",
+          "name": "Archive via Utility",
+          "match_type": "keyword",
+          "score": 1
+        }
+      ],
+      "ioc_counts": {
+        "ipv4": 0,
+        "ipv6": 0,
+        "url": 0,
+        "domain": 0,
+        "email": 0,
+        "hash": 0,
+        "filepath": 0,
+        "registry": 0,
+        "timestamp": 0
+      }
+    },
+    {
+      "filename": "logs\\SystemInfo\\computer_details.json",
+      "risk_score": 782,
+      "top_techniques": [
+        {
+          "id": "attack-pattern--0042a9f5-f053-4769-b3ef-9ad018dfa298",
+          "name": "Extra Window Memory Injection",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005a06c6-14bf-4118-afa0-ebcd8aebb0c9",
+          "name": "Scheduled Task",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005cc321-08ce-4d17-b1ea-cb5275926520",
+          "name": "Socket Filters",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00d0b012-8a03-410e-95de-5826bf542de6",
+          "name": "Indicator Removal from Tools",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00f90846-cbd1-4fc5-9233-df5c2bf2a662",
+          "name": "Archive via Utility",
+          "match_type": "keyword",
+          "score": 1
+        }
+      ],
+      "ioc_counts": {
+        "ipv4": 0,
+        "ipv6": 0,
+        "url": 0,
+        "domain": 0,
+        "email": 0,
+        "hash": 0,
+        "filepath": 0,
+        "registry": 0,
+        "timestamp": 0
+      }
+    },
+    {
+      "filename": "logs\\Network Connections\\FirewallExecutionLog.txt",
+      "risk_score": 781,
+      "top_techniques": [
+        {
+          "id": "attack-pattern--0042a9f5-f053-4769-b3ef-9ad018dfa298",
+          "name": "Extra Window Memory Injection",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005a06c6-14bf-4118-afa0-ebcd8aebb0c9",
+          "name": "Scheduled Task",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005cc321-08ce-4d17-b1ea-cb5275926520",
+          "name": "Socket Filters",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00d0b012-8a03-410e-95de-5826bf542de6",
+          "name": "Indicator Removal from Tools",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00f90846-cbd1-4fc5-9233-df5c2bf2a662",
+          "name": "Archive via Utility",
+          "match_type": "keyword",
+          "score": 1
+        }
+      ],
+      "ioc_counts": {
+        "ipv4": 0,
+        "ipv6": 0,
+        "url": 0,
+        "domain": 0,
+        "email": 0,
+        "hash": 0,
+        "filepath": 0,
+        "registry": 0,
+        "timestamp": 0
+      }
+    },
+    {
+      "filename": "logs\\AttackArtifacts\\mimikatz_simulation_advanced.log",
+      "risk_score": 779,
+      "top_techniques": [
+        {
+          "id": "attack-pattern--0042a9f5-f053-4769-b3ef-9ad018dfa298",
+          "name": "Extra Window Memory Injection",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005a06c6-14bf-4118-afa0-ebcd8aebb0c9",
+          "name": "Scheduled Task",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005cc321-08ce-4d17-b1ea-cb5275926520",
+          "name": "Socket Filters",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00d0b012-8a03-410e-95de-5826bf542de6",
+          "name": "Indicator Removal from Tools",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00f90846-cbd1-4fc5-9233-df5c2bf2a662",
+          "name": "Archive via Utility",
+          "match_type": "keyword",
+          "score": 1
+        }
+      ],
+      "ioc_counts": {
+        "ipv4": 0,
+        "ipv6": 0,
+        "url": 0,
+        "domain": 0,
+        "email": 0,
+        "hash": 0,
+        "filepath": 0,
+        "registry": 0,
+        "timestamp": 0
+      }
+    },
+    {
+      "filename": "logs\\AttackArtifacts\\recovery_inhibit_154471479.json",
+      "risk_score": 779,
+      "top_techniques": [
+        {
+          "id": "attack-pattern--0042a9f5-f053-4769-b3ef-9ad018dfa298",
+          "name": "Extra Window Memory Injection",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005a06c6-14bf-4118-afa0-ebcd8aebb0c9",
+          "name": "Scheduled Task",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005cc321-08ce-4d17-b1ea-cb5275926520",
+          "name": "Socket Filters",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00d0b012-8a03-410e-95de-5826bf542de6",
+          "name": "Indicator Removal from Tools",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00f90846-cbd1-4fc5-9233-df5c2bf2a662",
+          "name": "Archive via Utility",
+          "match_type": "keyword",
+          "score": 1
+        }
+      ],
+      "ioc_counts": {
+        "ipv4": 0,
+        "ipv6": 0,
+        "url": 0,
+        "domain": 0,
+        "email": 0,
+        "hash": 0,
+        "filepath": 0,
+        "registry": 0,
+        "timestamp": 0
+      }
+    },
+    {
+      "filename": "logs\\AttackArtifacts\\recovery_inhibit_608174682.json",
+      "risk_score": 779,
+      "top_techniques": [
+        {
+          "id": "attack-pattern--0042a9f5-f053-4769-b3ef-9ad018dfa298",
+          "name": "Extra Window Memory Injection",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005a06c6-14bf-4118-afa0-ebcd8aebb0c9",
+          "name": "Scheduled Task",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005cc321-08ce-4d17-b1ea-cb5275926520",
+          "name": "Socket Filters",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00d0b012-8a03-410e-95de-5826bf542de6",
+          "name": "Indicator Removal from Tools",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00f90846-cbd1-4fc5-9233-df5c2bf2a662",
+          "name": "Archive via Utility",
+          "match_type": "keyword",
+          "score": 1
+        }
+      ],
+      "ioc_counts": {
+        "ipv4": 0,
+        "ipv6": 0,
+        "url": 0,
+        "domain": 0,
+        "email": 0,
+        "hash": 0,
+        "filepath": 0,
+        "registry": 0,
+        "timestamp": 0
+      }
+    },
+    {
+      "filename": "logs\\AttackArtifacts\\staged_data_8bdd81b5\\collection_manifest.json",
+      "risk_score": 779,
+      "top_techniques": [
+        {
+          "id": "attack-pattern--0042a9f5-f053-4769-b3ef-9ad018dfa298",
+          "name": "Extra Window Memory Injection",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005a06c6-14bf-4118-afa0-ebcd8aebb0c9",
+          "name": "Scheduled Task",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005cc321-08ce-4d17-b1ea-cb5275926520",
+          "name": "Socket Filters",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00d0b012-8a03-410e-95de-5826bf542de6",
+          "name": "Indicator Removal from Tools",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00f90846-cbd1-4fc5-9233-df5c2bf2a662",
+          "name": "Archive via Utility",
+          "match_type": "keyword",
+          "score": 1
+        }
+      ],
+      "ioc_counts": {
+        "ipv4": 0,
+        "ipv6": 0,
+        "url": 0,
+        "domain": 0,
+        "email": 0,
+        "hash": 0,
+        "filepath": 0,
+        "registry": 0,
+        "timestamp": 0
+      }
+    },
+    {
+      "filename": "logs\\Network Connections\\IpConfig.txt",
+      "risk_score": 779,
+      "top_techniques": [
+        {
+          "id": "attack-pattern--0042a9f5-f053-4769-b3ef-9ad018dfa298",
+          "name": "Extra Window Memory Injection",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005a06c6-14bf-4118-afa0-ebcd8aebb0c9",
+          "name": "Scheduled Task",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005cc321-08ce-4d17-b1ea-cb5275926520",
+          "name": "Socket Filters",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00d0b012-8a03-410e-95de-5826bf542de6",
+          "name": "Indicator Removal from Tools",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00f90846-cbd1-4fc5-9233-df5c2bf2a662",
+          "name": "Archive via Utility",
+          "match_type": "keyword",
+          "score": 1
+        }
+      ],
+      "ioc_counts": {
+        "ipv4": 0,
+        "ipv6": 0,
+        "url": 0,
+        "domain": 0,
+        "email": 0,
+        "hash": 0,
+        "filepath": 0,
+        "registry": 0,
+        "timestamp": 0
+      }
+    },
+    {
+      "filename": "logs\\Network Connections\\ActiveNetConnections.txt",
+      "risk_score": 776,
+      "top_techniques": [
+        {
+          "id": "attack-pattern--0042a9f5-f053-4769-b3ef-9ad018dfa298",
+          "name": "Extra Window Memory Injection",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005a06c6-14bf-4118-afa0-ebcd8aebb0c9",
+          "name": "Scheduled Task",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005cc321-08ce-4d17-b1ea-cb5275926520",
+          "name": "Socket Filters",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00d0b012-8a03-410e-95de-5826bf542de6",
+          "name": "Indicator Removal from Tools",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00f90846-cbd1-4fc5-9233-df5c2bf2a662",
+          "name": "Archive via Utility",
+          "match_type": "keyword",
+          "score": 1
+        }
+      ],
+      "ioc_counts": {
+        "ipv4": 0,
+        "ipv6": 0,
+        "url": 0,
+        "domain": 0,
+        "email": 0,
+        "hash": 0,
+        "filepath": 0,
+        "registry": 0,
+        "timestamp": 0
+      }
+    },
+    {
+      "filename": "logs\\AttackArtifacts\\c2_exfil_262278765.json",
+      "risk_score": 773,
+      "top_techniques": [
+        {
+          "id": "attack-pattern--0042a9f5-f053-4769-b3ef-9ad018dfa298",
+          "name": "Extra Window Memory Injection",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005a06c6-14bf-4118-afa0-ebcd8aebb0c9",
+          "name": "Scheduled Task",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005cc321-08ce-4d17-b1ea-cb5275926520",
+          "name": "Socket Filters",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00d0b012-8a03-410e-95de-5826bf542de6",
+          "name": "Indicator Removal from Tools",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00f90846-cbd1-4fc5-9233-df5c2bf2a662",
+          "name": "Archive via Utility",
+          "match_type": "keyword",
+          "score": 1
+        }
+      ],
+      "ioc_counts": {
+        "ipv4": 0,
+        "ipv6": 0,
+        "url": 0,
+        "domain": 0,
+        "email": 0,
+        "hash": 0,
+        "filepath": 0,
+        "registry": 0,
+        "timestamp": 0
+      }
+    },
+    {
+      "filename": "logs\\AttackArtifacts\\wmi_query_49583989.json",
+      "risk_score": 772,
+      "top_techniques": [
+        {
+          "id": "attack-pattern--0042a9f5-f053-4769-b3ef-9ad018dfa298",
+          "name": "Extra Window Memory Injection",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005a06c6-14bf-4118-afa0-ebcd8aebb0c9",
+          "name": "Scheduled Task",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005cc321-08ce-4d17-b1ea-cb5275926520",
+          "name": "Socket Filters",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00d0b012-8a03-410e-95de-5826bf542de6",
+          "name": "Indicator Removal from Tools",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00f90846-cbd1-4fc5-9233-df5c2bf2a662",
+          "name": "Archive via Utility",
+          "match_type": "keyword",
+          "score": 1
+        }
+      ],
+      "ioc_counts": {
+        "ipv4": 0,
+        "ipv6": 0,
+        "url": 0,
+        "domain": 0,
+        "email": 0,
+        "hash": 0,
+        "filepath": 0,
+        "registry": 0,
+        "timestamp": 0
+      }
+    },
+    {
+      "filename": "logs\\AttackArtifacts\\network_configuration.json",
+      "risk_score": 770,
+      "top_techniques": [
+        {
+          "id": "attack-pattern--0042a9f5-f053-4769-b3ef-9ad018dfa298",
+          "name": "Extra Window Memory Injection",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005a06c6-14bf-4118-afa0-ebcd8aebb0c9",
+          "name": "Scheduled Task",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005cc321-08ce-4d17-b1ea-cb5275926520",
+          "name": "Socket Filters",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00d0b012-8a03-410e-95de-5826bf542de6",
+          "name": "Indicator Removal from Tools",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00f90846-cbd1-4fc5-9233-df5c2bf2a662",
+          "name": "Archive via Utility",
+          "match_type": "keyword",
+          "score": 1
+        }
+      ],
+      "ioc_counts": {
+        "ipv4": 0,
+        "ipv6": 0,
+        "url": 0,
+        "domain": 0,
+        "email": 0,
+        "hash": 0,
+        "filepath": 0,
+        "registry": 0,
+        "timestamp": 0
+      }
+    },
+    {
+      "filename": "logs\\AttackArtifacts\\ps_execution_EncodedCommand.json",
+      "risk_score": 768,
+      "top_techniques": [
+        {
+          "id": "attack-pattern--0042a9f5-f053-4769-b3ef-9ad018dfa298",
+          "name": "Extra Window Memory Injection",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005a06c6-14bf-4118-afa0-ebcd8aebb0c9",
+          "name": "Scheduled Task",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005cc321-08ce-4d17-b1ea-cb5275926520",
+          "name": "Socket Filters",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00d0b012-8a03-410e-95de-5826bf542de6",
+          "name": "Indicator Removal from Tools",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00f90846-cbd1-4fc5-9233-df5c2bf2a662",
+          "name": "Archive via Utility",
+          "match_type": "keyword",
+          "score": 1
+        }
+      ],
+      "ioc_counts": {
+        "ipv4": 0,
+        "ipv6": 0,
+        "url": 0,
+        "domain": 0,
+        "email": 0,
+        "hash": 0,
+        "filepath": 0,
+        "registry": 0,
+        "timestamp": 0
+      }
+    },
+    {
+      "filename": "logs\\AttackArtifacts\\log_clear_Microsoft-Windows-PowerShell_Operational.json",
+      "risk_score": 767,
+      "top_techniques": [
+        {
+          "id": "attack-pattern--0042a9f5-f053-4769-b3ef-9ad018dfa298",
+          "name": "Extra Window Memory Injection",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005a06c6-14bf-4118-afa0-ebcd8aebb0c9",
+          "name": "Scheduled Task",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005cc321-08ce-4d17-b1ea-cb5275926520",
+          "name": "Socket Filters",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00d0b012-8a03-410e-95de-5826bf542de6",
+          "name": "Indicator Removal from Tools",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00f90846-cbd1-4fc5-9233-df5c2bf2a662",
+          "name": "Archive via Utility",
+          "match_type": "keyword",
+          "score": 1
+        }
+      ],
+      "ioc_counts": {
+        "ipv4": 0,
+        "ipv6": 0,
+        "url": 0,
+        "domain": 0,
+        "email": 0,
+        "hash": 0,
+        "filepath": 0,
+        "registry": 0,
+        "timestamp": 0
+      }
+    },
+    {
+      "filename": "logs\\AttackArtifacts\\service_discovery.json",
+      "risk_score": 767,
+      "top_techniques": [
+        {
+          "id": "attack-pattern--0042a9f5-f053-4769-b3ef-9ad018dfa298",
+          "name": "Extra Window Memory Injection",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005a06c6-14bf-4118-afa0-ebcd8aebb0c9",
+          "name": "Scheduled Task",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005cc321-08ce-4d17-b1ea-cb5275926520",
+          "name": "Socket Filters",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00d0b012-8a03-410e-95de-5826bf542de6",
+          "name": "Indicator Removal from Tools",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00f90846-cbd1-4fc5-9233-df5c2bf2a662",
+          "name": "Archive via Utility",
+          "match_type": "keyword",
+          "score": 1
+        }
+      ],
+      "ioc_counts": {
+        "ipv4": 0,
+        "ipv6": 0,
+        "url": 0,
+        "domain": 0,
+        "email": 0,
+        "hash": 0,
+        "filepath": 0,
+        "registry": 0,
+        "timestamp": 0
+      }
+    },
+    {
+      "filename": "logs\\AttackArtifacts\\service_discovery.json",
+      "risk_score": 766,
+      "top_techniques": [
+        {
+          "id": "attack-pattern--0042a9f5-f053-4769-b3ef-9ad018dfa298",
+          "name": "Extra Window Memory Injection",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005a06c6-14bf-4118-afa0-ebcd8aebb0c9",
+          "name": "Scheduled Task",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005cc321-08ce-4d17-b1ea-cb5275926520",
+          "name": "Socket Filters",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00d0b012-8a03-410e-95de-5826bf542de6",
+          "name": "Indicator Removal from Tools",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00f90846-cbd1-4fc5-9233-df5c2bf2a662",
+          "name": "Archive via Utility",
+          "match_type": "keyword",
+          "score": 1
+        }
+      ],
+      "ioc_counts": {
+        "ipv4": 0,
+        "ipv6": 0,
+        "url": 0,
+        "domain": 0,
+        "email": 0,
+        "hash": 0,
+        "filepath": 0,
+        "registry": 0,
+        "timestamp": 0
+      }
+    },
+    {
+      "filename": "logs\\AttackArtifacts\\c2_exfil_1957332214.json",
+      "risk_score": 764,
+      "top_techniques": [
+        {
+          "id": "attack-pattern--0042a9f5-f053-4769-b3ef-9ad018dfa298",
+          "name": "Extra Window Memory Injection",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005a06c6-14bf-4118-afa0-ebcd8aebb0c9",
+          "name": "Scheduled Task",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005cc321-08ce-4d17-b1ea-cb5275926520",
+          "name": "Socket Filters",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00d0b012-8a03-410e-95de-5826bf542de6",
+          "name": "Indicator Removal from Tools",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00f90846-cbd1-4fc5-9233-df5c2bf2a662",
+          "name": "Archive via Utility",
+          "match_type": "keyword",
+          "score": 1
+        }
+      ],
+      "ioc_counts": {
+        "ipv4": 0,
+        "ipv6": 0,
+        "url": 0,
+        "domain": 0,
+        "email": 0,
+        "hash": 0,
+        "filepath": 0,
+        "registry": 0,
+        "timestamp": 0
+      }
+    },
+    {
+      "filename": "logs\\AttackArtifacts\\service_discovery.json",
+      "risk_score": 764,
+      "top_techniques": [
+        {
+          "id": "attack-pattern--0042a9f5-f053-4769-b3ef-9ad018dfa298",
+          "name": "Extra Window Memory Injection",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005a06c6-14bf-4118-afa0-ebcd8aebb0c9",
+          "name": "Scheduled Task",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005cc321-08ce-4d17-b1ea-cb5275926520",
+          "name": "Socket Filters",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00d0b012-8a03-410e-95de-5826bf542de6",
+          "name": "Indicator Removal from Tools",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00f90846-cbd1-4fc5-9233-df5c2bf2a662",
+          "name": "Archive via Utility",
+          "match_type": "keyword",
+          "score": 1
+        }
+      ],
+      "ioc_counts": {
+        "ipv4": 0,
+        "ipv6": 0,
+        "url": 0,
+        "domain": 0,
+        "email": 0,
+        "hash": 0,
+        "filepath": 0,
+        "registry": 0,
+        "timestamp": 0
+      }
+    },
+    {
+      "filename": "logs\\AttackArtifacts\\service_discovery.json",
+      "risk_score": 761,
+      "top_techniques": [
+        {
+          "id": "attack-pattern--0042a9f5-f053-4769-b3ef-9ad018dfa298",
+          "name": "Extra Window Memory Injection",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005a06c6-14bf-4118-afa0-ebcd8aebb0c9",
+          "name": "Scheduled Task",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005cc321-08ce-4d17-b1ea-cb5275926520",
+          "name": "Socket Filters",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00d0b012-8a03-410e-95de-5826bf542de6",
+          "name": "Indicator Removal from Tools",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00f90846-cbd1-4fc5-9233-df5c2bf2a662",
+          "name": "Archive via Utility",
+          "match_type": "keyword",
+          "score": 1
+        }
+      ],
+      "ioc_counts": {
+        "ipv4": 0,
+        "ipv6": 0,
+        "url": 0,
+        "domain": 0,
+        "email": 0,
+        "hash": 0,
+        "filepath": 0,
+        "registry": 0,
+        "timestamp": 0
+      }
+    },
+    {
+      "filename": "logs\\AttackArtifacts\\cloud_exfil_Dropbox.json",
+      "risk_score": 760,
+      "top_techniques": [
+        {
+          "id": "attack-pattern--0042a9f5-f053-4769-b3ef-9ad018dfa298",
+          "name": "Extra Window Memory Injection",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005a06c6-14bf-4118-afa0-ebcd8aebb0c9",
+          "name": "Scheduled Task",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005cc321-08ce-4d17-b1ea-cb5275926520",
+          "name": "Socket Filters",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00d0b012-8a03-410e-95de-5826bf542de6",
+          "name": "Indicator Removal from Tools",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00f90846-cbd1-4fc5-9233-df5c2bf2a662",
+          "name": "Archive via Utility",
+          "match_type": "keyword",
+          "score": 1
+        }
+      ],
+      "ioc_counts": {
+        "ipv4": 0,
+        "ipv6": 0,
+        "url": 0,
+        "domain": 0,
+        "email": 0,
+        "hash": 0,
+        "filepath": 0,
+        "registry": 0,
+        "timestamp": 0
+      }
+    },
+    {
+      "filename": "logs\\AttackArtifacts\\service_discovery.json",
+      "risk_score": 759,
+      "top_techniques": [
+        {
+          "id": "attack-pattern--0042a9f5-f053-4769-b3ef-9ad018dfa298",
+          "name": "Extra Window Memory Injection",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005a06c6-14bf-4118-afa0-ebcd8aebb0c9",
+          "name": "Scheduled Task",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005cc321-08ce-4d17-b1ea-cb5275926520",
+          "name": "Socket Filters",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00d0b012-8a03-410e-95de-5826bf542de6",
+          "name": "Indicator Removal from Tools",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00f90846-cbd1-4fc5-9233-df5c2bf2a662",
+          "name": "Archive via Utility",
+          "match_type": "keyword",
+          "score": 1
+        }
+      ],
+      "ioc_counts": {
+        "ipv4": 0,
+        "ipv6": 0,
+        "url": 0,
+        "domain": 0,
+        "email": 0,
+        "hash": 0,
+        "filepath": 0,
+        "registry": 0,
+        "timestamp": 0
+      }
+    },
+    {
+      "filename": "logs\\AttackArtifacts\\service_discovery.json",
+      "risk_score": 758,
+      "top_techniques": [
+        {
+          "id": "attack-pattern--0042a9f5-f053-4769-b3ef-9ad018dfa298",
+          "name": "Extra Window Memory Injection",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005a06c6-14bf-4118-afa0-ebcd8aebb0c9",
+          "name": "Scheduled Task",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005cc321-08ce-4d17-b1ea-cb5275926520",
+          "name": "Socket Filters",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00d0b012-8a03-410e-95de-5826bf542de6",
+          "name": "Indicator Removal from Tools",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00f90846-cbd1-4fc5-9233-df5c2bf2a662",
+          "name": "Archive via Utility",
+          "match_type": "keyword",
+          "score": 1
+        }
+      ],
+      "ioc_counts": {
+        "ipv4": 0,
+        "ipv6": 0,
+        "url": 0,
+        "domain": 0,
+        "email": 0,
+        "hash": 0,
+        "filepath": 0,
+        "registry": 0,
+        "timestamp": 0
+      }
+    },
+    {
+      "filename": "logs\\AttackArtifacts\\injection_T1055.002.json",
+      "risk_score": 757,
+      "top_techniques": [
+        {
+          "id": "attack-pattern--0042a9f5-f053-4769-b3ef-9ad018dfa298",
+          "name": "Extra Window Memory Injection",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005a06c6-14bf-4118-afa0-ebcd8aebb0c9",
+          "name": "Scheduled Task",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005cc321-08ce-4d17-b1ea-cb5275926520",
+          "name": "Socket Filters",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00d0b012-8a03-410e-95de-5826bf542de6",
+          "name": "Indicator Removal from Tools",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00f90846-cbd1-4fc5-9233-df5c2bf2a662",
+          "name": "Archive via Utility",
+          "match_type": "keyword",
+          "score": 1
+        }
+      ],
+      "ioc_counts": {
+        "ipv4": 0,
+        "ipv6": 0,
+        "url": 0,
+        "domain": 0,
+        "email": 0,
+        "hash": 0,
+        "filepath": 0,
+        "registry": 0,
+        "timestamp": 0
+      }
+    },
+    {
+      "filename": "logs\\MDE_Report\\mde_report.json",
+      "risk_score": 757,
+      "top_techniques": [
+        {
+          "id": "attack-pattern--0042a9f5-f053-4769-b3ef-9ad018dfa298",
+          "name": "Extra Window Memory Injection",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005a06c6-14bf-4118-afa0-ebcd8aebb0c9",
+          "name": "Scheduled Task",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005cc321-08ce-4d17-b1ea-cb5275926520",
+          "name": "Socket Filters",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00d0b012-8a03-410e-95de-5826bf542de6",
+          "name": "Indicator Removal from Tools",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00f90846-cbd1-4fc5-9233-df5c2bf2a662",
+          "name": "Archive via Utility",
+          "match_type": "keyword",
+          "score": 1
+        }
+      ],
+      "ioc_counts": {
+        "ipv4": 0,
+        "ipv6": 0,
+        "url": 0,
+        "domain": 0,
+        "email": 0,
+        "hash": 0,
+        "filepath": 0,
+        "registry": 0,
+        "timestamp": 0
+      }
+    },
+    {
+      "filename": "logs\\AttackArtifacts\\service_discovery.json",
+      "risk_score": 756,
+      "top_techniques": [
+        {
+          "id": "attack-pattern--0042a9f5-f053-4769-b3ef-9ad018dfa298",
+          "name": "Extra Window Memory Injection",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005a06c6-14bf-4118-afa0-ebcd8aebb0c9",
+          "name": "Scheduled Task",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005cc321-08ce-4d17-b1ea-cb5275926520",
+          "name": "Socket Filters",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00d0b012-8a03-410e-95de-5826bf542de6",
+          "name": "Indicator Removal from Tools",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00f90846-cbd1-4fc5-9233-df5c2bf2a662",
+          "name": "Archive via Utility",
+          "match_type": "keyword",
+          "score": 1
+        }
+      ],
+      "ioc_counts": {
+        "ipv4": 0,
+        "ipv6": 0,
+        "url": 0,
+        "domain": 0,
+        "email": 0,
+        "hash": 0,
+        "filepath": 0,
+        "registry": 0,
+        "timestamp": 0
+      }
+    },
+    {
+      "filename": "logs\\AttackArtifacts\\attack_fingerprint.json",
+      "risk_score": 755,
+      "top_techniques": [
+        {
+          "id": "attack-pattern--0042a9f5-f053-4769-b3ef-9ad018dfa298",
+          "name": "Extra Window Memory Injection",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005a06c6-14bf-4118-afa0-ebcd8aebb0c9",
+          "name": "Scheduled Task",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005cc321-08ce-4d17-b1ea-cb5275926520",
+          "name": "Socket Filters",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00d0b012-8a03-410e-95de-5826bf542de6",
+          "name": "Indicator Removal from Tools",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00f90846-cbd1-4fc5-9233-df5c2bf2a662",
+          "name": "Archive via Utility",
+          "match_type": "keyword",
+          "score": 1
+        }
+      ],
+      "ioc_counts": {
+        "ipv4": 0,
+        "ipv6": 0,
+        "url": 0,
+        "domain": 0,
+        "email": 0,
+        "hash": 0,
+        "filepath": 0,
+        "registry": 0,
+        "timestamp": 0
+      }
+    },
+    {
+      "filename": "logs\\AttackArtifacts\\cloud_exfil_GoogleDrive.json",
+      "risk_score": 755,
+      "top_techniques": [
+        {
+          "id": "attack-pattern--0042a9f5-f053-4769-b3ef-9ad018dfa298",
+          "name": "Extra Window Memory Injection",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005a06c6-14bf-4118-afa0-ebcd8aebb0c9",
+          "name": "Scheduled Task",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005cc321-08ce-4d17-b1ea-cb5275926520",
+          "name": "Socket Filters",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00d0b012-8a03-410e-95de-5826bf542de6",
+          "name": "Indicator Removal from Tools",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00f90846-cbd1-4fc5-9233-df5c2bf2a662",
+          "name": "Archive via Utility",
+          "match_type": "keyword",
+          "score": 1
+        }
+      ],
+      "ioc_counts": {
+        "ipv4": 0,
+        "ipv6": 0,
+        "url": 0,
+        "domain": 0,
+        "email": 0,
+        "hash": 0,
+        "filepath": 0,
+        "registry": 0,
+        "timestamp": 0
+      }
+    },
+    {
+      "filename": "logs\\AttackArtifacts\\service_discovery.json",
+      "risk_score": 755,
+      "top_techniques": [
+        {
+          "id": "attack-pattern--0042a9f5-f053-4769-b3ef-9ad018dfa298",
+          "name": "Extra Window Memory Injection",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005a06c6-14bf-4118-afa0-ebcd8aebb0c9",
+          "name": "Scheduled Task",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005cc321-08ce-4d17-b1ea-cb5275926520",
+          "name": "Socket Filters",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00d0b012-8a03-410e-95de-5826bf542de6",
+          "name": "Indicator Removal from Tools",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00f90846-cbd1-4fc5-9233-df5c2bf2a662",
+          "name": "Archive via Utility",
+          "match_type": "keyword",
+          "score": 1
+        }
+      ],
+      "ioc_counts": {
+        "ipv4": 0,
+        "ipv6": 0,
+        "url": 0,
+        "domain": 0,
+        "email": 0,
+        "hash": 0,
+        "filepath": 0,
+        "registry": 0,
+        "timestamp": 0
+      }
+    },
+    {
+      "filename": "logs\\AttackArtifacts\\smb_test_1640826034.json",
+      "risk_score": 755,
+      "top_techniques": [
+        {
+          "id": "attack-pattern--0042a9f5-f053-4769-b3ef-9ad018dfa298",
+          "name": "Extra Window Memory Injection",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005a06c6-14bf-4118-afa0-ebcd8aebb0c9",
+          "name": "Scheduled Task",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005cc321-08ce-4d17-b1ea-cb5275926520",
+          "name": "Socket Filters",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00d0b012-8a03-410e-95de-5826bf542de6",
+          "name": "Indicator Removal from Tools",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00f90846-cbd1-4fc5-9233-df5c2bf2a662",
+          "name": "Archive via Utility",
+          "match_type": "keyword",
+          "score": 1
+        }
+      ],
+      "ioc_counts": {
+        "ipv4": 0,
+        "ipv6": 0,
+        "url": 0,
+        "domain": 0,
+        "email": 0,
+        "hash": 0,
+        "filepath": 0,
+        "registry": 0,
+        "timestamp": 0
+      }
+    },
+    {
+      "filename": "logs\\AttackArtifacts\\wmi_query_539614389.json",
+      "risk_score": 755,
+      "top_techniques": [
+        {
+          "id": "attack-pattern--0042a9f5-f053-4769-b3ef-9ad018dfa298",
+          "name": "Extra Window Memory Injection",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005a06c6-14bf-4118-afa0-ebcd8aebb0c9",
+          "name": "Scheduled Task",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005cc321-08ce-4d17-b1ea-cb5275926520",
+          "name": "Socket Filters",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00d0b012-8a03-410e-95de-5826bf542de6",
+          "name": "Indicator Removal from Tools",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00f90846-cbd1-4fc5-9233-df5c2bf2a662",
+          "name": "Archive via Utility",
+          "match_type": "keyword",
+          "score": 1
+        }
+      ],
+      "ioc_counts": {
+        "ipv4": 0,
+        "ipv6": 0,
+        "url": 0,
+        "domain": 0,
+        "email": 0,
+        "hash": 0,
+        "filepath": 0,
+        "registry": 0,
+        "timestamp": 0
+      }
+    },
+    {
+      "filename": "logs\\AttackArtifacts\\c2_exfil_1884008292.json",
+      "risk_score": 754,
+      "top_techniques": [
+        {
+          "id": "attack-pattern--0042a9f5-f053-4769-b3ef-9ad018dfa298",
+          "name": "Extra Window Memory Injection",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005a06c6-14bf-4118-afa0-ebcd8aebb0c9",
+          "name": "Scheduled Task",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005cc321-08ce-4d17-b1ea-cb5275926520",
+          "name": "Socket Filters",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00d0b012-8a03-410e-95de-5826bf542de6",
+          "name": "Indicator Removal from Tools",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00f90846-cbd1-4fc5-9233-df5c2bf2a662",
+          "name": "Archive via Utility",
+          "match_type": "keyword",
+          "score": 1
+        }
+      ],
+      "ioc_counts": {
+        "ipv4": 0,
+        "ipv6": 0,
+        "url": 0,
+        "domain": 0,
+        "email": 0,
+        "hash": 0,
+        "filepath": 0,
+        "registry": 0,
+        "timestamp": 0
+      }
+    },
+    {
+      "filename": "logs\\AttackArtifacts\\apc_injection.json",
+      "risk_score": 753,
+      "top_techniques": [
+        {
+          "id": "attack-pattern--0042a9f5-f053-4769-b3ef-9ad018dfa298",
+          "name": "Extra Window Memory Injection",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005a06c6-14bf-4118-afa0-ebcd8aebb0c9",
+          "name": "Scheduled Task",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005cc321-08ce-4d17-b1ea-cb5275926520",
+          "name": "Socket Filters",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00d0b012-8a03-410e-95de-5826bf542de6",
+          "name": "Indicator Removal from Tools",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00f90846-cbd1-4fc5-9233-df5c2bf2a662",
+          "name": "Archive via Utility",
+          "match_type": "keyword",
+          "score": 1
+        }
+      ],
+      "ioc_counts": {
+        "ipv4": 0,
+        "ipv6": 0,
+        "url": 0,
+        "domain": 0,
+        "email": 0,
+        "hash": 0,
+        "filepath": 0,
+        "registry": 0,
+        "timestamp": 0
+      }
+    },
+    {
+      "filename": "logs\\AttackArtifacts\\log_clear_Application.json",
+      "risk_score": 751,
+      "top_techniques": [
+        {
+          "id": "attack-pattern--0042a9f5-f053-4769-b3ef-9ad018dfa298",
+          "name": "Extra Window Memory Injection",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005a06c6-14bf-4118-afa0-ebcd8aebb0c9",
+          "name": "Scheduled Task",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005cc321-08ce-4d17-b1ea-cb5275926520",
+          "name": "Socket Filters",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00d0b012-8a03-410e-95de-5826bf542de6",
+          "name": "Indicator Removal from Tools",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00f90846-cbd1-4fc5-9233-df5c2bf2a662",
+          "name": "Archive via Utility",
+          "match_type": "keyword",
+          "score": 1
+        }
+      ],
+      "ioc_counts": {
+        "ipv4": 0,
+        "ipv6": 0,
+        "url": 0,
+        "domain": 0,
+        "email": 0,
+        "hash": 0,
+        "filepath": 0,
+        "registry": 0,
+        "timestamp": 0
+      }
+    },
+    {
+      "filename": "logs\\AttackArtifacts\\cloud_exfil_OneDrive.json",
+      "risk_score": 750,
+      "top_techniques": [
+        {
+          "id": "attack-pattern--0042a9f5-f053-4769-b3ef-9ad018dfa298",
+          "name": "Extra Window Memory Injection",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005a06c6-14bf-4118-afa0-ebcd8aebb0c9",
+          "name": "Scheduled Task",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005cc321-08ce-4d17-b1ea-cb5275926520",
+          "name": "Socket Filters",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00d0b012-8a03-410e-95de-5826bf542de6",
+          "name": "Indicator Removal from Tools",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00f90846-cbd1-4fc5-9233-df5c2bf2a662",
+          "name": "Archive via Utility",
+          "match_type": "keyword",
+          "score": 1
+        }
+      ],
+      "ioc_counts": {
+        "ipv4": 0,
+        "ipv6": 0,
+        "url": 0,
+        "domain": 0,
+        "email": 0,
+        "hash": 0,
+        "filepath": 0,
+        "registry": 0,
+        "timestamp": 0
+      }
+    },
+    {
+      "filename": "logs\\AttackArtifacts\\wmi_query_827981587.json",
+      "risk_score": 750,
+      "top_techniques": [
+        {
+          "id": "attack-pattern--0042a9f5-f053-4769-b3ef-9ad018dfa298",
+          "name": "Extra Window Memory Injection",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005a06c6-14bf-4118-afa0-ebcd8aebb0c9",
+          "name": "Scheduled Task",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005cc321-08ce-4d17-b1ea-cb5275926520",
+          "name": "Socket Filters",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00d0b012-8a03-410e-95de-5826bf542de6",
+          "name": "Indicator Removal from Tools",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00f90846-cbd1-4fc5-9233-df5c2bf2a662",
+          "name": "Archive via Utility",
+          "match_type": "keyword",
+          "score": 1
+        }
+      ],
+      "ioc_counts": {
+        "ipv4": 0,
+        "ipv6": 0,
+        "url": 0,
+        "domain": 0,
+        "email": 0,
+        "hash": 0,
+        "filepath": 0,
+        "registry": 0,
+        "timestamp": 0
+      }
+    },
+    {
+      "filename": "logs\\AttackArtifacts\\injection_T1055.001.json",
+      "risk_score": 748,
+      "top_techniques": [
+        {
+          "id": "attack-pattern--0042a9f5-f053-4769-b3ef-9ad018dfa298",
+          "name": "Extra Window Memory Injection",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005a06c6-14bf-4118-afa0-ebcd8aebb0c9",
+          "name": "Scheduled Task",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005cc321-08ce-4d17-b1ea-cb5275926520",
+          "name": "Socket Filters",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00d0b012-8a03-410e-95de-5826bf542de6",
+          "name": "Indicator Removal from Tools",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00f90846-cbd1-4fc5-9233-df5c2bf2a662",
+          "name": "Archive via Utility",
+          "match_type": "keyword",
+          "score": 1
+        }
+      ],
+      "ioc_counts": {
+        "ipv4": 0,
+        "ipv6": 0,
+        "url": 0,
+        "domain": 0,
+        "email": 0,
+        "hash": 0,
+        "filepath": 0,
+        "registry": 0,
+        "timestamp": 0
+      }
+    },
+    {
+      "filename": "logs\\AttackArtifacts\\ps_execution_ScriptBlock.json",
+      "risk_score": 747,
+      "top_techniques": [
+        {
+          "id": "attack-pattern--0042a9f5-f053-4769-b3ef-9ad018dfa298",
+          "name": "Extra Window Memory Injection",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005a06c6-14bf-4118-afa0-ebcd8aebb0c9",
+          "name": "Scheduled Task",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005cc321-08ce-4d17-b1ea-cb5275926520",
+          "name": "Socket Filters",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00d0b012-8a03-410e-95de-5826bf542de6",
+          "name": "Indicator Removal from Tools",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00f90846-cbd1-4fc5-9233-df5c2bf2a662",
+          "name": "Archive via Utility",
+          "match_type": "keyword",
+          "score": 1
+        }
+      ],
+      "ioc_counts": {
+        "ipv4": 0,
+        "ipv6": 0,
+        "url": 0,
+        "domain": 0,
+        "email": 0,
+        "hash": 0,
+        "filepath": 0,
+        "registry": 0,
+        "timestamp": 0
+      }
+    },
+    {
+      "filename": "logs\\AttackArtifacts\\staged_data_8bdd81b5\\passwords.txt",
+      "risk_score": 747,
+      "top_techniques": [
+        {
+          "id": "attack-pattern--0042a9f5-f053-4769-b3ef-9ad018dfa298",
+          "name": "Extra Window Memory Injection",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005a06c6-14bf-4118-afa0-ebcd8aebb0c9",
+          "name": "Scheduled Task",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005cc321-08ce-4d17-b1ea-cb5275926520",
+          "name": "Socket Filters",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00d0b012-8a03-410e-95de-5826bf542de6",
+          "name": "Indicator Removal from Tools",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00f90846-cbd1-4fc5-9233-df5c2bf2a662",
+          "name": "Archive via Utility",
+          "match_type": "keyword",
+          "score": 1
+        }
+      ],
+      "ioc_counts": {
+        "ipv4": 0,
+        "ipv6": 0,
+        "url": 0,
+        "domain": 0,
+        "email": 0,
+        "hash": 0,
+        "filepath": 0,
+        "registry": 0,
+        "timestamp": 0
+      }
+    },
+    {
+      "filename": "logs\\AttackArtifacts\\service_discovery.json",
+      "risk_score": 746,
+      "top_techniques": [
+        {
+          "id": "attack-pattern--0042a9f5-f053-4769-b3ef-9ad018dfa298",
+          "name": "Extra Window Memory Injection",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005a06c6-14bf-4118-afa0-ebcd8aebb0c9",
+          "name": "Scheduled Task",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005cc321-08ce-4d17-b1ea-cb5275926520",
+          "name": "Socket Filters",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00d0b012-8a03-410e-95de-5826bf542de6",
+          "name": "Indicator Removal from Tools",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00f90846-cbd1-4fc5-9233-df5c2bf2a662",
+          "name": "Archive via Utility",
+          "match_type": "keyword",
+          "score": 1
+        }
+      ],
+      "ioc_counts": {
+        "ipv4": 0,
+        "ipv6": 0,
+        "url": 0,
+        "domain": 0,
+        "email": 0,
+        "hash": 0,
+        "filepath": 0,
+        "registry": 0,
+        "timestamp": 0
+      }
+    },
+    {
+      "filename": "logs\\AttackArtifacts\\ps_execution_InvokeExpression.json",
+      "risk_score": 745,
+      "top_techniques": [
+        {
+          "id": "attack-pattern--0042a9f5-f053-4769-b3ef-9ad018dfa298",
+          "name": "Extra Window Memory Injection",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005a06c6-14bf-4118-afa0-ebcd8aebb0c9",
+          "name": "Scheduled Task",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005cc321-08ce-4d17-b1ea-cb5275926520",
+          "name": "Socket Filters",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00d0b012-8a03-410e-95de-5826bf542de6",
+          "name": "Indicator Removal from Tools",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00f90846-cbd1-4fc5-9233-df5c2bf2a662",
+          "name": "Archive via Utility",
+          "match_type": "keyword",
+          "score": 1
+        }
+      ],
+      "ioc_counts": {
+        "ipv4": 0,
+        "ipv6": 0,
+        "url": 0,
+        "domain": 0,
+        "email": 0,
+        "hash": 0,
+        "filepath": 0,
+        "registry": 0,
+        "timestamp": 0
+      }
+    },
+    {
+      "filename": "logs\\AttackArtifacts\\smb_test_1271485568.json",
+      "risk_score": 745,
+      "top_techniques": [
+        {
+          "id": "attack-pattern--0042a9f5-f053-4769-b3ef-9ad018dfa298",
+          "name": "Extra Window Memory Injection",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005a06c6-14bf-4118-afa0-ebcd8aebb0c9",
+          "name": "Scheduled Task",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005cc321-08ce-4d17-b1ea-cb5275926520",
+          "name": "Socket Filters",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00d0b012-8a03-410e-95de-5826bf542de6",
+          "name": "Indicator Removal from Tools",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00f90846-cbd1-4fc5-9233-df5c2bf2a662",
+          "name": "Archive via Utility",
+          "match_type": "keyword",
+          "score": 1
+        }
+      ],
+      "ioc_counts": {
+        "ipv4": 0,
+        "ipv6": 0,
+        "url": 0,
+        "domain": 0,
+        "email": 0,
+        "hash": 0,
+        "filepath": 0,
+        "registry": 0,
+        "timestamp": 0
+      }
+    },
+    {
+      "filename": "logs\\AttackArtifacts\\secure_delete_sdelete.json",
+      "risk_score": 744,
+      "top_techniques": [
+        {
+          "id": "attack-pattern--0042a9f5-f053-4769-b3ef-9ad018dfa298",
+          "name": "Extra Window Memory Injection",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005a06c6-14bf-4118-afa0-ebcd8aebb0c9",
+          "name": "Scheduled Task",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005cc321-08ce-4d17-b1ea-cb5275926520",
+          "name": "Socket Filters",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00d0b012-8a03-410e-95de-5826bf542de6",
+          "name": "Indicator Removal from Tools",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00f90846-cbd1-4fc5-9233-df5c2bf2a662",
+          "name": "Archive via Utility",
+          "match_type": "keyword",
+          "score": 1
+        }
+      ],
+      "ioc_counts": {
+        "ipv4": 0,
+        "ipv6": 0,
+        "url": 0,
+        "domain": 0,
+        "email": 0,
+        "hash": 0,
+        "filepath": 0,
+        "registry": 0,
+        "timestamp": 0
+      }
+    },
+    {
+      "filename": "logs\\AttackArtifacts\\security_enum_SecurityHealthService.json",
+      "risk_score": 744,
+      "top_techniques": [
+        {
+          "id": "attack-pattern--0042a9f5-f053-4769-b3ef-9ad018dfa298",
+          "name": "Extra Window Memory Injection",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005a06c6-14bf-4118-afa0-ebcd8aebb0c9",
+          "name": "Scheduled Task",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005cc321-08ce-4d17-b1ea-cb5275926520",
+          "name": "Socket Filters",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00d0b012-8a03-410e-95de-5826bf542de6",
+          "name": "Indicator Removal from Tools",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00f90846-cbd1-4fc5-9233-df5c2bf2a662",
+          "name": "Archive via Utility",
+          "match_type": "keyword",
+          "score": 1
+        }
+      ],
+      "ioc_counts": {
+        "ipv4": 0,
+        "ipv6": 0,
+        "url": 0,
+        "domain": 0,
+        "email": 0,
+        "hash": 0,
+        "filepath": 0,
+        "registry": 0,
+        "timestamp": 0
+      }
+    },
+    {
+      "filename": "logs\\AttackArtifacts\\service_discovery.json",
+      "risk_score": 744,
+      "top_techniques": [
+        {
+          "id": "attack-pattern--0042a9f5-f053-4769-b3ef-9ad018dfa298",
+          "name": "Extra Window Memory Injection",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005a06c6-14bf-4118-afa0-ebcd8aebb0c9",
+          "name": "Scheduled Task",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005cc321-08ce-4d17-b1ea-cb5275926520",
+          "name": "Socket Filters",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00d0b012-8a03-410e-95de-5826bf542de6",
+          "name": "Indicator Removal from Tools",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00f90846-cbd1-4fc5-9233-df5c2bf2a662",
+          "name": "Archive via Utility",
+          "match_type": "keyword",
+          "score": 1
+        }
+      ],
+      "ioc_counts": {
+        "ipv4": 0,
+        "ipv6": 0,
+        "url": 0,
+        "domain": 0,
+        "email": 0,
+        "hash": 0,
+        "filepath": 0,
+        "registry": 0,
+        "timestamp": 0
+      }
+    },
+    {
+      "filename": "logs\\AttackArtifacts\\smb_test_2049667159.json",
+      "risk_score": 743,
+      "top_techniques": [
+        {
+          "id": "attack-pattern--0042a9f5-f053-4769-b3ef-9ad018dfa298",
+          "name": "Extra Window Memory Injection",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005a06c6-14bf-4118-afa0-ebcd8aebb0c9",
+          "name": "Scheduled Task",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005cc321-08ce-4d17-b1ea-cb5275926520",
+          "name": "Socket Filters",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00d0b012-8a03-410e-95de-5826bf542de6",
+          "name": "Indicator Removal from Tools",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00f90846-cbd1-4fc5-9233-df5c2bf2a662",
+          "name": "Archive via Utility",
+          "match_type": "keyword",
+          "score": 1
+        }
+      ],
+      "ioc_counts": {
+        "ipv4": 0,
+        "ipv6": 0,
+        "url": 0,
+        "domain": 0,
+        "email": 0,
+        "hash": 0,
+        "filepath": 0,
+        "registry": 0,
+        "timestamp": 0
+      }
+    },
+    {
+      "filename": "logs\\AttackArtifacts\\secure_delete_format.json",
+      "risk_score": 742,
+      "top_techniques": [
+        {
+          "id": "attack-pattern--0042a9f5-f053-4769-b3ef-9ad018dfa298",
+          "name": "Extra Window Memory Injection",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005a06c6-14bf-4118-afa0-ebcd8aebb0c9",
+          "name": "Scheduled Task",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005cc321-08ce-4d17-b1ea-cb5275926520",
+          "name": "Socket Filters",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00d0b012-8a03-410e-95de-5826bf542de6",
+          "name": "Indicator Removal from Tools",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00f90846-cbd1-4fc5-9233-df5c2bf2a662",
+          "name": "Archive via Utility",
+          "match_type": "keyword",
+          "score": 1
+        }
+      ],
+      "ioc_counts": {
+        "ipv4": 0,
+        "ipv6": 0,
+        "url": 0,
+        "domain": 0,
+        "email": 0,
+        "hash": 0,
+        "filepath": 0,
+        "registry": 0,
+        "timestamp": 0
+      }
+    },
+    {
+      "filename": "logs\\AttackArtifacts\\service_discovery.json",
+      "risk_score": 742,
+      "top_techniques": [
+        {
+          "id": "attack-pattern--0042a9f5-f053-4769-b3ef-9ad018dfa298",
+          "name": "Extra Window Memory Injection",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005a06c6-14bf-4118-afa0-ebcd8aebb0c9",
+          "name": "Scheduled Task",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005cc321-08ce-4d17-b1ea-cb5275926520",
+          "name": "Socket Filters",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00d0b012-8a03-410e-95de-5826bf542de6",
+          "name": "Indicator Removal from Tools",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00f90846-cbd1-4fc5-9233-df5c2bf2a662",
+          "name": "Archive via Utility",
+          "match_type": "keyword",
+          "score": 1
+        }
+      ],
+      "ioc_counts": {
+        "ipv4": 0,
+        "ipv6": 0,
+        "url": 0,
+        "domain": 0,
+        "email": 0,
+        "hash": 0,
+        "filepath": 0,
+        "registry": 0,
+        "timestamp": 0
+      }
+    },
+    {
+      "filename": "logs\\AttackArtifacts\\log_clear_Security.json",
+      "risk_score": 741,
+      "top_techniques": [
+        {
+          "id": "attack-pattern--0042a9f5-f053-4769-b3ef-9ad018dfa298",
+          "name": "Extra Window Memory Injection",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005a06c6-14bf-4118-afa0-ebcd8aebb0c9",
+          "name": "Scheduled Task",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005cc321-08ce-4d17-b1ea-cb5275926520",
+          "name": "Socket Filters",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00d0b012-8a03-410e-95de-5826bf542de6",
+          "name": "Indicator Removal from Tools",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00f90846-cbd1-4fc5-9233-df5c2bf2a662",
+          "name": "Archive via Utility",
+          "match_type": "keyword",
+          "score": 1
+        }
+      ],
+      "ioc_counts": {
+        "ipv4": 0,
+        "ipv6": 0,
+        "url": 0,
+        "domain": 0,
+        "email": 0,
+        "hash": 0,
+        "filepath": 0,
+        "registry": 0,
+        "timestamp": 0
+      }
+    },
+    {
+      "filename": "logs\\AttackArtifacts\\secure_delete_cipher.json",
+      "risk_score": 740,
+      "top_techniques": [
+        {
+          "id": "attack-pattern--0042a9f5-f053-4769-b3ef-9ad018dfa298",
+          "name": "Extra Window Memory Injection",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005a06c6-14bf-4118-afa0-ebcd8aebb0c9",
+          "name": "Scheduled Task",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005cc321-08ce-4d17-b1ea-cb5275926520",
+          "name": "Socket Filters",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00d0b012-8a03-410e-95de-5826bf542de6",
+          "name": "Indicator Removal from Tools",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00f90846-cbd1-4fc5-9233-df5c2bf2a662",
+          "name": "Archive via Utility",
+          "match_type": "keyword",
+          "score": 1
+        }
+      ],
+      "ioc_counts": {
+        "ipv4": 0,
+        "ipv6": 0,
+        "url": 0,
+        "domain": 0,
+        "email": 0,
+        "hash": 0,
+        "filepath": 0,
+        "registry": 0,
+        "timestamp": 0
+      }
+    },
+    {
+      "filename": "logs\\AttackArtifacts\\winrm_configuration.json",
+      "risk_score": 740,
+      "top_techniques": [
+        {
+          "id": "attack-pattern--0042a9f5-f053-4769-b3ef-9ad018dfa298",
+          "name": "Extra Window Memory Injection",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005a06c6-14bf-4118-afa0-ebcd8aebb0c9",
+          "name": "Scheduled Task",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005cc321-08ce-4d17-b1ea-cb5275926520",
+          "name": "Socket Filters",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00d0b012-8a03-410e-95de-5826bf542de6",
+          "name": "Indicator Removal from Tools",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00f90846-cbd1-4fc5-9233-df5c2bf2a662",
+          "name": "Archive via Utility",
+          "match_type": "keyword",
+          "score": 1
+        }
+      ],
+      "ioc_counts": {
+        "ipv4": 0,
+        "ipv6": 0,
+        "url": 0,
+        "domain": 0,
+        "email": 0,
+        "hash": 0,
+        "filepath": 0,
+        "registry": 0,
+        "timestamp": 0
+      }
+    },
+    {
+      "filename": "logs\\AttackArtifacts\\injection_T1055.003.json",
+      "risk_score": 739,
+      "top_techniques": [
+        {
+          "id": "attack-pattern--0042a9f5-f053-4769-b3ef-9ad018dfa298",
+          "name": "Extra Window Memory Injection",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005a06c6-14bf-4118-afa0-ebcd8aebb0c9",
+          "name": "Scheduled Task",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005cc321-08ce-4d17-b1ea-cb5275926520",
+          "name": "Socket Filters",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00d0b012-8a03-410e-95de-5826bf542de6",
+          "name": "Indicator Removal from Tools",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00f90846-cbd1-4fc5-9233-df5c2bf2a662",
+          "name": "Archive via Utility",
+          "match_type": "keyword",
+          "score": 1
+        }
+      ],
+      "ioc_counts": {
+        "ipv4": 0,
+        "ipv6": 0,
+        "url": 0,
+        "domain": 0,
+        "email": 0,
+        "hash": 0,
+        "filepath": 0,
+        "registry": 0,
+        "timestamp": 0
+      }
+    },
+    {
+      "filename": "logs\\AttackArtifacts\\service_discovery.json",
+      "risk_score": 739,
+      "top_techniques": [
+        {
+          "id": "attack-pattern--0042a9f5-f053-4769-b3ef-9ad018dfa298",
+          "name": "Extra Window Memory Injection",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005a06c6-14bf-4118-afa0-ebcd8aebb0c9",
+          "name": "Scheduled Task",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005cc321-08ce-4d17-b1ea-cb5275926520",
+          "name": "Socket Filters",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00d0b012-8a03-410e-95de-5826bf542de6",
+          "name": "Indicator Removal from Tools",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00f90846-cbd1-4fc5-9233-df5c2bf2a662",
+          "name": "Archive via Utility",
+          "match_type": "keyword",
+          "score": 1
+        }
+      ],
+      "ioc_counts": {
+        "ipv4": 0,
+        "ipv6": 0,
+        "url": 0,
+        "domain": 0,
+        "email": 0,
+        "hash": 0,
+        "filepath": 0,
+        "registry": 0,
+        "timestamp": 0
+      }
+    },
+    {
+      "filename": "logs\\AttackArtifacts\\service_discovery.json",
+      "risk_score": 738,
+      "top_techniques": [
+        {
+          "id": "attack-pattern--0042a9f5-f053-4769-b3ef-9ad018dfa298",
+          "name": "Extra Window Memory Injection",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005a06c6-14bf-4118-afa0-ebcd8aebb0c9",
+          "name": "Scheduled Task",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005cc321-08ce-4d17-b1ea-cb5275926520",
+          "name": "Socket Filters",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00d0b012-8a03-410e-95de-5826bf542de6",
+          "name": "Indicator Removal from Tools",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00f90846-cbd1-4fc5-9233-df5c2bf2a662",
+          "name": "Archive via Utility",
+          "match_type": "keyword",
+          "score": 1
+        }
+      ],
+      "ioc_counts": {
+        "ipv4": 0,
+        "ipv6": 0,
+        "url": 0,
+        "domain": 0,
+        "email": 0,
+        "hash": 0,
+        "filepath": 0,
+        "registry": 0,
+        "timestamp": 0
+      }
+    },
+    {
+      "filename": "logs\\Temp Directories\\Administrator_TempDirFiles.txt",
+      "risk_score": 738,
+      "top_techniques": [
+        {
+          "id": "attack-pattern--0042a9f5-f053-4769-b3ef-9ad018dfa298",
+          "name": "Extra Window Memory Injection",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005a06c6-14bf-4118-afa0-ebcd8aebb0c9",
+          "name": "Scheduled Task",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005cc321-08ce-4d17-b1ea-cb5275926520",
+          "name": "Socket Filters",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00d0b012-8a03-410e-95de-5826bf542de6",
+          "name": "Indicator Removal from Tools",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00f90846-cbd1-4fc5-9233-df5c2bf2a662",
+          "name": "Archive via Utility",
+          "match_type": "keyword",
+          "score": 1
+        }
+      ],
+      "ioc_counts": {
+        "ipv4": 0,
+        "ipv6": 0,
+        "url": 0,
+        "domain": 0,
+        "email": 0,
+        "hash": 0,
+        "filepath": 0,
+        "registry": 0,
+        "timestamp": 0
+      }
+    },
+    {
+      "filename": "logs\\AttackArtifacts\\service_discovery.json",
+      "risk_score": 737,
+      "top_techniques": [
+        {
+          "id": "attack-pattern--0042a9f5-f053-4769-b3ef-9ad018dfa298",
+          "name": "Extra Window Memory Injection",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005a06c6-14bf-4118-afa0-ebcd8aebb0c9",
+          "name": "Scheduled Task",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005cc321-08ce-4d17-b1ea-cb5275926520",
+          "name": "Socket Filters",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00d0b012-8a03-410e-95de-5826bf542de6",
+          "name": "Indicator Removal from Tools",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00f90846-cbd1-4fc5-9233-df5c2bf2a662",
+          "name": "Archive via Utility",
+          "match_type": "keyword",
+          "score": 1
+        }
+      ],
+      "ioc_counts": {
+        "ipv4": 0,
+        "ipv6": 0,
+        "url": 0,
+        "domain": 0,
+        "email": 0,
+        "hash": 0,
+        "filepath": 0,
+        "registry": 0,
+        "timestamp": 0
+      }
+    },
+    {
+      "filename": "logs\\AttackArtifacts\\service_discovery.json",
+      "risk_score": 737,
+      "top_techniques": [
+        {
+          "id": "attack-pattern--0042a9f5-f053-4769-b3ef-9ad018dfa298",
+          "name": "Extra Window Memory Injection",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005a06c6-14bf-4118-afa0-ebcd8aebb0c9",
+          "name": "Scheduled Task",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005cc321-08ce-4d17-b1ea-cb5275926520",
+          "name": "Socket Filters",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00d0b012-8a03-410e-95de-5826bf542de6",
+          "name": "Indicator Removal from Tools",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00f90846-cbd1-4fc5-9233-df5c2bf2a662",
+          "name": "Archive via Utility",
+          "match_type": "keyword",
+          "score": 1
+        }
+      ],
+      "ioc_counts": {
+        "ipv4": 0,
+        "ipv6": 0,
+        "url": 0,
+        "domain": 0,
+        "email": 0,
+        "hash": 0,
+        "filepath": 0,
+        "registry": 0,
+        "timestamp": 0
+      }
+    },
+    {
+      "filename": "logs\\AttackArtifacts\\service_discovery.json",
+      "risk_score": 737,
+      "top_techniques": [
+        {
+          "id": "attack-pattern--0042a9f5-f053-4769-b3ef-9ad018dfa298",
+          "name": "Extra Window Memory Injection",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005a06c6-14bf-4118-afa0-ebcd8aebb0c9",
+          "name": "Scheduled Task",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005cc321-08ce-4d17-b1ea-cb5275926520",
+          "name": "Socket Filters",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00d0b012-8a03-410e-95de-5826bf542de6",
+          "name": "Indicator Removal from Tools",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00f90846-cbd1-4fc5-9233-df5c2bf2a662",
+          "name": "Archive via Utility",
+          "match_type": "keyword",
+          "score": 1
+        }
+      ],
+      "ioc_counts": {
+        "ipv4": 0,
+        "ipv6": 0,
+        "url": 0,
+        "domain": 0,
+        "email": 0,
+        "hash": 0,
+        "filepath": 0,
+        "registry": 0,
+        "timestamp": 0
+      }
+    },
+    {
+      "filename": "logs\\AttackArtifacts\\service_discovery.json",
+      "risk_score": 737,
+      "top_techniques": [
+        {
+          "id": "attack-pattern--0042a9f5-f053-4769-b3ef-9ad018dfa298",
+          "name": "Extra Window Memory Injection",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005a06c6-14bf-4118-afa0-ebcd8aebb0c9",
+          "name": "Scheduled Task",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005cc321-08ce-4d17-b1ea-cb5275926520",
+          "name": "Socket Filters",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00d0b012-8a03-410e-95de-5826bf542de6",
+          "name": "Indicator Removal from Tools",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00f90846-cbd1-4fc5-9233-df5c2bf2a662",
+          "name": "Archive via Utility",
+          "match_type": "keyword",
+          "score": 1
+        }
+      ],
+      "ioc_counts": {
+        "ipv4": 0,
+        "ipv6": 0,
+        "url": 0,
+        "domain": 0,
+        "email": 0,
+        "hash": 0,
+        "filepath": 0,
+        "registry": 0,
+        "timestamp": 0
+      }
+    },
+    {
+      "filename": "logs\\AttackArtifacts\\cloud_exfil_AWS S3.json",
+      "risk_score": 736,
+      "top_techniques": [
+        {
+          "id": "attack-pattern--0042a9f5-f053-4769-b3ef-9ad018dfa298",
+          "name": "Extra Window Memory Injection",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005a06c6-14bf-4118-afa0-ebcd8aebb0c9",
+          "name": "Scheduled Task",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005cc321-08ce-4d17-b1ea-cb5275926520",
+          "name": "Socket Filters",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00d0b012-8a03-410e-95de-5826bf542de6",
+          "name": "Indicator Removal from Tools",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00f90846-cbd1-4fc5-9233-df5c2bf2a662",
+          "name": "Archive via Utility",
+          "match_type": "keyword",
+          "score": 1
+        }
+      ],
+      "ioc_counts": {
+        "ipv4": 0,
+        "ipv6": 0,
+        "url": 0,
+        "domain": 0,
+        "email": 0,
+        "hash": 0,
+        "filepath": 0,
+        "registry": 0,
+        "timestamp": 0
+      }
+    },
+    {
+      "filename": "logs\\AttackArtifacts\\injection_T1055.012.json",
+      "risk_score": 735,
+      "top_techniques": [
+        {
+          "id": "attack-pattern--0042a9f5-f053-4769-b3ef-9ad018dfa298",
+          "name": "Extra Window Memory Injection",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005a06c6-14bf-4118-afa0-ebcd8aebb0c9",
+          "name": "Scheduled Task",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005cc321-08ce-4d17-b1ea-cb5275926520",
+          "name": "Socket Filters",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00d0b012-8a03-410e-95de-5826bf542de6",
+          "name": "Indicator Removal from Tools",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00f90846-cbd1-4fc5-9233-df5c2bf2a662",
+          "name": "Archive via Utility",
+          "match_type": "keyword",
+          "score": 1
+        }
+      ],
+      "ioc_counts": {
+        "ipv4": 0,
+        "ipv6": 0,
+        "url": 0,
+        "domain": 0,
+        "email": 0,
+        "hash": 0,
+        "filepath": 0,
+        "registry": 0,
+        "timestamp": 0
+      }
+    },
+    {
+      "filename": "logs\\AttackArtifacts\\service_discovery.json",
+      "risk_score": 735,
+      "top_techniques": [
+        {
+          "id": "attack-pattern--0042a9f5-f053-4769-b3ef-9ad018dfa298",
+          "name": "Extra Window Memory Injection",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005a06c6-14bf-4118-afa0-ebcd8aebb0c9",
+          "name": "Scheduled Task",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005cc321-08ce-4d17-b1ea-cb5275926520",
+          "name": "Socket Filters",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00d0b012-8a03-410e-95de-5826bf542de6",
+          "name": "Indicator Removal from Tools",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00f90846-cbd1-4fc5-9233-df5c2bf2a662",
+          "name": "Archive via Utility",
+          "match_type": "keyword",
+          "score": 1
+        }
+      ],
+      "ioc_counts": {
+        "ipv4": 0,
+        "ipv6": 0,
+        "url": 0,
+        "domain": 0,
+        "email": 0,
+        "hash": 0,
+        "filepath": 0,
+        "registry": 0,
+        "timestamp": 0
+      }
+    },
+    {
+      "filename": "logs\\AttackArtifacts\\service_discovery.json",
+      "risk_score": 735,
+      "top_techniques": [
+        {
+          "id": "attack-pattern--0042a9f5-f053-4769-b3ef-9ad018dfa298",
+          "name": "Extra Window Memory Injection",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005a06c6-14bf-4118-afa0-ebcd8aebb0c9",
+          "name": "Scheduled Task",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005cc321-08ce-4d17-b1ea-cb5275926520",
+          "name": "Socket Filters",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00d0b012-8a03-410e-95de-5826bf542de6",
+          "name": "Indicator Removal from Tools",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00f90846-cbd1-4fc5-9233-df5c2bf2a662",
+          "name": "Archive via Utility",
+          "match_type": "keyword",
+          "score": 1
+        }
+      ],
+      "ioc_counts": {
+        "ipv4": 0,
+        "ipv6": 0,
+        "url": 0,
+        "domain": 0,
+        "email": 0,
+        "hash": 0,
+        "filepath": 0,
+        "registry": 0,
+        "timestamp": 0
+      }
+    },
+    {
+      "filename": "logs\\AttackArtifacts\\credential_dump_attempt.json",
+      "risk_score": 734,
+      "top_techniques": [
+        {
+          "id": "attack-pattern--0042a9f5-f053-4769-b3ef-9ad018dfa298",
+          "name": "Extra Window Memory Injection",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005a06c6-14bf-4118-afa0-ebcd8aebb0c9",
+          "name": "Scheduled Task",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005cc321-08ce-4d17-b1ea-cb5275926520",
+          "name": "Socket Filters",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00d0b012-8a03-410e-95de-5826bf542de6",
+          "name": "Indicator Removal from Tools",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00f90846-cbd1-4fc5-9233-df5c2bf2a662",
+          "name": "Archive via Utility",
+          "match_type": "keyword",
+          "score": 1
+        }
+      ],
+      "ioc_counts": {
+        "ipv4": 0,
+        "ipv6": 0,
+        "url": 0,
+        "domain": 0,
+        "email": 0,
+        "hash": 0,
+        "filepath": 0,
+        "registry": 0,
+        "timestamp": 0
+      }
+    },
+    {
+      "filename": "logs\\AttackArtifacts\\encoded_payload.txt",
+      "risk_score": 734,
+      "top_techniques": [
+        {
+          "id": "attack-pattern--0042a9f5-f053-4769-b3ef-9ad018dfa298",
+          "name": "Extra Window Memory Injection",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005a06c6-14bf-4118-afa0-ebcd8aebb0c9",
+          "name": "Scheduled Task",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005cc321-08ce-4d17-b1ea-cb5275926520",
+          "name": "Socket Filters",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00d0b012-8a03-410e-95de-5826bf542de6",
+          "name": "Indicator Removal from Tools",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00f90846-cbd1-4fc5-9233-df5c2bf2a662",
+          "name": "Archive via Utility",
+          "match_type": "keyword",
+          "score": 1
+        }
+      ],
+      "ioc_counts": {
+        "ipv4": 0,
+        "ipv6": 0,
+        "url": 0,
+        "domain": 0,
+        "email": 0,
+        "hash": 0,
+        "filepath": 0,
+        "registry": 0,
+        "timestamp": 0
+      }
+    },
+    {
+      "filename": "logs\\System Information\\netstat.txt",
+      "risk_score": 731,
+      "top_techniques": [
+        {
+          "id": "attack-pattern--0042a9f5-f053-4769-b3ef-9ad018dfa298",
+          "name": "Extra Window Memory Injection",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005a06c6-14bf-4118-afa0-ebcd8aebb0c9",
+          "name": "Scheduled Task",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005cc321-08ce-4d17-b1ea-cb5275926520",
+          "name": "Socket Filters",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00d0b012-8a03-410e-95de-5826bf542de6",
+          "name": "Indicator Removal from Tools",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00f90846-cbd1-4fc5-9233-df5c2bf2a662",
+          "name": "Archive via Utility",
+          "match_type": "keyword",
+          "score": 1
+        }
+      ],
+      "ioc_counts": {
+        "ipv4": 0,
+        "ipv6": 0,
+        "url": 0,
+        "domain": 0,
+        "email": 0,
+        "hash": 0,
+        "filepath": 0,
+        "registry": 0,
+        "timestamp": 0
+      }
+    },
+    {
+      "filename": "logs\\AttackArtifacts\\obfuscation_1433171128.json",
+      "risk_score": 726,
+      "top_techniques": [
+        {
+          "id": "attack-pattern--0042a9f5-f053-4769-b3ef-9ad018dfa298",
+          "name": "Extra Window Memory Injection",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005a06c6-14bf-4118-afa0-ebcd8aebb0c9",
+          "name": "Scheduled Task",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005cc321-08ce-4d17-b1ea-cb5275926520",
+          "name": "Socket Filters",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00d0b012-8a03-410e-95de-5826bf542de6",
+          "name": "Indicator Removal from Tools",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00f90846-cbd1-4fc5-9233-df5c2bf2a662",
+          "name": "Archive via Utility",
+          "match_type": "keyword",
+          "score": 1
+        }
+      ],
+      "ioc_counts": {
+        "ipv4": 0,
+        "ipv6": 0,
+        "url": 0,
+        "domain": 0,
+        "email": 0,
+        "hash": 0,
+        "filepath": 0,
+        "registry": 0,
+        "timestamp": 0
+      }
+    },
+    {
+      "filename": "logs\\AttackArtifacts\\lolbas_rundll32.json",
+      "risk_score": 724,
+      "top_techniques": [
+        {
+          "id": "attack-pattern--0042a9f5-f053-4769-b3ef-9ad018dfa298",
+          "name": "Extra Window Memory Injection",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005a06c6-14bf-4118-afa0-ebcd8aebb0c9",
+          "name": "Scheduled Task",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005cc321-08ce-4d17-b1ea-cb5275926520",
+          "name": "Socket Filters",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00d0b012-8a03-410e-95de-5826bf542de6",
+          "name": "Indicator Removal from Tools",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00f90846-cbd1-4fc5-9233-df5c2bf2a662",
+          "name": "Archive via Utility",
+          "match_type": "keyword",
+          "score": 1
+        }
+      ],
+      "ioc_counts": {
+        "ipv4": 0,
+        "ipv6": 0,
+        "url": 0,
+        "domain": 0,
+        "email": 0,
+        "hash": 0,
+        "filepath": 0,
+        "registry": 0,
+        "timestamp": 0
+      }
+    },
+    {
+      "filename": "logs\\AttackArtifacts\\security_enum_MsMpEng.json",
+      "risk_score": 721,
+      "top_techniques": [
+        {
+          "id": "attack-pattern--0042a9f5-f053-4769-b3ef-9ad018dfa298",
+          "name": "Extra Window Memory Injection",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005a06c6-14bf-4118-afa0-ebcd8aebb0c9",
+          "name": "Scheduled Task",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005cc321-08ce-4d17-b1ea-cb5275926520",
+          "name": "Socket Filters",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00d0b012-8a03-410e-95de-5826bf542de6",
+          "name": "Indicator Removal from Tools",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00f90846-cbd1-4fc5-9233-df5c2bf2a662",
+          "name": "Archive via Utility",
+          "match_type": "keyword",
+          "score": 1
+        }
+      ],
+      "ioc_counts": {
+        "ipv4": 0,
+        "ipv6": 0,
+        "url": 0,
+        "domain": 0,
+        "email": 0,
+        "hash": 0,
+        "filepath": 0,
+        "registry": 0,
+        "timestamp": 0
+      }
+    },
+    {
+      "filename": "logs\\AttackArtifacts\\staged_data_8bdd81b5\\api_keys.json",
+      "risk_score": 721,
+      "top_techniques": [
+        {
+          "id": "attack-pattern--0042a9f5-f053-4769-b3ef-9ad018dfa298",
+          "name": "Extra Window Memory Injection",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005a06c6-14bf-4118-afa0-ebcd8aebb0c9",
+          "name": "Scheduled Task",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005cc321-08ce-4d17-b1ea-cb5275926520",
+          "name": "Socket Filters",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00d0b012-8a03-410e-95de-5826bf542de6",
+          "name": "Indicator Removal from Tools",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00f90846-cbd1-4fc5-9233-df5c2bf2a662",
+          "name": "Archive via Utility",
+          "match_type": "keyword",
+          "score": 1
+        }
+      ],
+      "ioc_counts": {
+        "ipv4": 0,
+        "ipv6": 0,
+        "url": 0,
+        "domain": 0,
+        "email": 0,
+        "hash": 0,
+        "filepath": 0,
+        "registry": 0,
+        "timestamp": 0
+      }
+    },
+    {
+      "filename": "logs\\Installed Programs\\S-1-5-21-382297125-3180263876-1941408969-1002_Software_Microsoft_Windows_CurrentVersion_Uninstall.txt",
+      "risk_score": 719,
+      "top_techniques": [
+        {
+          "id": "attack-pattern--0042a9f5-f053-4769-b3ef-9ad018dfa298",
+          "name": "Extra Window Memory Injection",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005a06c6-14bf-4118-afa0-ebcd8aebb0c9",
+          "name": "Scheduled Task",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005cc321-08ce-4d17-b1ea-cb5275926520",
+          "name": "Socket Filters",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00d0b012-8a03-410e-95de-5826bf542de6",
+          "name": "Indicator Removal from Tools",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00f90846-cbd1-4fc5-9233-df5c2bf2a662",
+          "name": "Archive via Utility",
+          "match_type": "keyword",
+          "score": 1
+        }
+      ],
+      "ioc_counts": {
+        "ipv4": 0,
+        "ipv6": 0,
+        "url": 0,
+        "domain": 0,
+        "email": 0,
+        "hash": 0,
+        "filepath": 0,
+        "registry": 0,
+        "timestamp": 0
+      }
+    },
+    {
+      "filename": "logs\\Installed Programs\\S-1-5-21-382297125-3180263876-1941408969-500_Software_Microsoft_Windows_CurrentVersion_Uninstall.txt",
+      "risk_score": 719,
+      "top_techniques": [
+        {
+          "id": "attack-pattern--0042a9f5-f053-4769-b3ef-9ad018dfa298",
+          "name": "Extra Window Memory Injection",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005a06c6-14bf-4118-afa0-ebcd8aebb0c9",
+          "name": "Scheduled Task",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005cc321-08ce-4d17-b1ea-cb5275926520",
+          "name": "Socket Filters",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00d0b012-8a03-410e-95de-5826bf542de6",
+          "name": "Indicator Removal from Tools",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00f90846-cbd1-4fc5-9233-df5c2bf2a662",
+          "name": "Archive via Utility",
+          "match_type": "keyword",
+          "score": 1
+        }
+      ],
+      "ioc_counts": {
+        "ipv4": 0,
+        "ipv6": 0,
+        "url": 0,
+        "domain": 0,
+        "email": 0,
+        "hash": 0,
+        "filepath": 0,
+        "registry": 0,
+        "timestamp": 0
+      }
+    },
+    {
+      "filename": "logs\\Installed Programs\\S-1-5-21-382297125-3180263876-1941408969-504_Software_Microsoft_Windows_CurrentVersion_Uninstall.txt",
+      "risk_score": 719,
+      "top_techniques": [
+        {
+          "id": "attack-pattern--0042a9f5-f053-4769-b3ef-9ad018dfa298",
+          "name": "Extra Window Memory Injection",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005a06c6-14bf-4118-afa0-ebcd8aebb0c9",
+          "name": "Scheduled Task",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005cc321-08ce-4d17-b1ea-cb5275926520",
+          "name": "Socket Filters",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00d0b012-8a03-410e-95de-5826bf542de6",
+          "name": "Indicator Removal from Tools",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00f90846-cbd1-4fc5-9233-df5c2bf2a662",
+          "name": "Archive via Utility",
+          "match_type": "keyword",
+          "score": 1
+        }
+      ],
+      "ioc_counts": {
+        "ipv4": 0,
+        "ipv6": 0,
+        "url": 0,
+        "domain": 0,
+        "email": 0,
+        "hash": 0,
+        "filepath": 0,
+        "registry": 0,
+        "timestamp": 0
+      }
+    },
+    {
+      "filename": "logs\\System Information\\arp_cache.txt",
+      "risk_score": 719,
+      "top_techniques": [
+        {
+          "id": "attack-pattern--0042a9f5-f053-4769-b3ef-9ad018dfa298",
+          "name": "Extra Window Memory Injection",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005a06c6-14bf-4118-afa0-ebcd8aebb0c9",
+          "name": "Scheduled Task",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005cc321-08ce-4d17-b1ea-cb5275926520",
+          "name": "Socket Filters",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00d0b012-8a03-410e-95de-5826bf542de6",
+          "name": "Indicator Removal from Tools",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00f90846-cbd1-4fc5-9233-df5c2bf2a662",
+          "name": "Archive via Utility",
+          "match_type": "keyword",
+          "score": 1
+        }
+      ],
+      "ioc_counts": {
+        "ipv4": 0,
+        "ipv6": 0,
+        "url": 0,
+        "domain": 0,
+        "email": 0,
+        "hash": 0,
+        "filepath": 0,
+        "registry": 0,
+        "timestamp": 0
+      }
+    },
+    {
+      "filename": "logs\\AttackArtifacts\\encrypted_channel.json",
+      "risk_score": 717,
+      "top_techniques": [
+        {
+          "id": "attack-pattern--0042a9f5-f053-4769-b3ef-9ad018dfa298",
+          "name": "Extra Window Memory Injection",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005a06c6-14bf-4118-afa0-ebcd8aebb0c9",
+          "name": "Scheduled Task",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005cc321-08ce-4d17-b1ea-cb5275926520",
+          "name": "Socket Filters",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00d0b012-8a03-410e-95de-5826bf542de6",
+          "name": "Indicator Removal from Tools",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00f90846-cbd1-4fc5-9233-df5c2bf2a662",
+          "name": "Archive via Utility",
+          "match_type": "keyword",
+          "score": 1
+        }
+      ],
+      "ioc_counts": {
+        "ipv4": 0,
+        "ipv6": 0,
+        "url": 0,
+        "domain": 0,
+        "email": 0,
+        "hash": 0,
+        "filepath": 0,
+        "registry": 0,
+        "timestamp": 0
+      }
+    },
+    {
+      "filename": "logs\\AttackArtifacts\\lolbas_certutil.json",
+      "risk_score": 712,
+      "top_techniques": [
+        {
+          "id": "attack-pattern--0042a9f5-f053-4769-b3ef-9ad018dfa298",
+          "name": "Extra Window Memory Injection",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005a06c6-14bf-4118-afa0-ebcd8aebb0c9",
+          "name": "Scheduled Task",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005cc321-08ce-4d17-b1ea-cb5275926520",
+          "name": "Socket Filters",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00d0b012-8a03-410e-95de-5826bf542de6",
+          "name": "Indicator Removal from Tools",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00f90846-cbd1-4fc5-9233-df5c2bf2a662",
+          "name": "Archive via Utility",
+          "match_type": "keyword",
+          "score": 1
+        }
+      ],
+      "ioc_counts": {
+        "ipv4": 0,
+        "ipv6": 0,
+        "url": 0,
+        "domain": 0,
+        "email": 0,
+        "hash": 0,
+        "filepath": 0,
+        "registry": 0,
+        "timestamp": 0
+      }
+    },
+    {
+      "filename": "logs\\Temp Directories\\Sapadmin_TempDirFiles.txt",
+      "risk_score": 709,
+      "top_techniques": [
+        {
+          "id": "attack-pattern--0042a9f5-f053-4769-b3ef-9ad018dfa298",
+          "name": "Extra Window Memory Injection",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005cc321-08ce-4d17-b1ea-cb5275926520",
+          "name": "Socket Filters",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00d0b012-8a03-410e-95de-5826bf542de6",
+          "name": "Indicator Removal from Tools",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00f90846-cbd1-4fc5-9233-df5c2bf2a662",
+          "name": "Archive via Utility",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--01327cde-66c4-4123-bf34-5f258d59457b",
+          "name": "VNC",
+          "match_type": "keyword",
+          "score": 1
+        }
+      ],
+      "ioc_counts": {
+        "ipv4": 0,
+        "ipv6": 0,
+        "url": 0,
+        "domain": 0,
+        "email": 0,
+        "hash": 0,
+        "filepath": 0,
+        "registry": 0,
+        "timestamp": 0
+      }
+    },
+    {
+      "filename": "logs\\AttackArtifacts\\rdp_configuration.json",
+      "risk_score": 707,
+      "top_techniques": [
+        {
+          "id": "attack-pattern--0042a9f5-f053-4769-b3ef-9ad018dfa298",
+          "name": "Extra Window Memory Injection",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005a06c6-14bf-4118-afa0-ebcd8aebb0c9",
+          "name": "Scheduled Task",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005cc321-08ce-4d17-b1ea-cb5275926520",
+          "name": "Socket Filters",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00d0b012-8a03-410e-95de-5826bf542de6",
+          "name": "Indicator Removal from Tools",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00f90846-cbd1-4fc5-9233-df5c2bf2a662",
+          "name": "Archive via Utility",
+          "match_type": "keyword",
+          "score": 1
+        }
+      ],
+      "ioc_counts": {
+        "ipv4": 0,
+        "ipv6": 0,
+        "url": 0,
+        "domain": 0,
+        "email": 0,
+        "hash": 0,
+        "filepath": 0,
+        "registry": 0,
+        "timestamp": 0
+      }
+    },
+    {
+      "filename": "logs\\AttackArtifacts\\lolbas_regsvr32.json",
+      "risk_score": 701,
+      "top_techniques": [
+        {
+          "id": "attack-pattern--0042a9f5-f053-4769-b3ef-9ad018dfa298",
+          "name": "Extra Window Memory Injection",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005a06c6-14bf-4118-afa0-ebcd8aebb0c9",
+          "name": "Scheduled Task",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005cc321-08ce-4d17-b1ea-cb5275926520",
+          "name": "Socket Filters",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00d0b012-8a03-410e-95de-5826bf542de6",
+          "name": "Indicator Removal from Tools",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00f90846-cbd1-4fc5-9233-df5c2bf2a662",
+          "name": "Archive via Utility",
+          "match_type": "keyword",
+          "score": 1
+        }
+      ],
+      "ioc_counts": {
+        "ipv4": 0,
+        "ipv6": 0,
+        "url": 0,
+        "domain": 0,
+        "email": 0,
+        "hash": 0,
+        "filepath": 0,
+        "registry": 0,
+        "timestamp": 0
+      }
+    },
+    {
+      "filename": "logs\\AttackArtifacts\\lolbas_mshta.json",
+      "risk_score": 698,
+      "top_techniques": [
+        {
+          "id": "attack-pattern--0042a9f5-f053-4769-b3ef-9ad018dfa298",
+          "name": "Extra Window Memory Injection",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005a06c6-14bf-4118-afa0-ebcd8aebb0c9",
+          "name": "Scheduled Task",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005cc321-08ce-4d17-b1ea-cb5275926520",
+          "name": "Socket Filters",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00d0b012-8a03-410e-95de-5826bf542de6",
+          "name": "Indicator Removal from Tools",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00f90846-cbd1-4fc5-9233-df5c2bf2a662",
+          "name": "Archive via Utility",
+          "match_type": "keyword",
+          "score": 1
+        }
+      ],
+      "ioc_counts": {
+        "ipv4": 0,
+        "ipv6": 0,
+        "url": 0,
+        "domain": 0,
+        "email": 0,
+        "hash": 0,
+        "filepath": 0,
+        "registry": 0,
+        "timestamp": 0
+      }
+    },
+    {
+      "filename": "logs\\AttackArtifacts\\privileged_groups.json",
+      "risk_score": 696,
+      "top_techniques": [
+        {
+          "id": "attack-pattern--0042a9f5-f053-4769-b3ef-9ad018dfa298",
+          "name": "Extra Window Memory Injection",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005a06c6-14bf-4118-afa0-ebcd8aebb0c9",
+          "name": "Scheduled Task",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005cc321-08ce-4d17-b1ea-cb5275926520",
+          "name": "Socket Filters",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00d0b012-8a03-410e-95de-5826bf542de6",
+          "name": "Indicator Removal from Tools",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00f90846-cbd1-4fc5-9233-df5c2bf2a662",
+          "name": "Archive via Utility",
+          "match_type": "keyword",
+          "score": 1
+        }
+      ],
+      "ioc_counts": {
+        "ipv4": 0,
+        "ipv6": 0,
+        "url": 0,
+        "domain": 0,
+        "email": 0,
+        "hash": 0,
+        "filepath": 0,
+        "registry": 0,
+        "timestamp": 0
+      }
+    },
+    {
+      "filename": "logs\\SystemInfo\\netstat.txt",
+      "risk_score": 689,
+      "top_techniques": [
+        {
+          "id": "attack-pattern--0042a9f5-f053-4769-b3ef-9ad018dfa298",
+          "name": "Extra Window Memory Injection",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005a06c6-14bf-4118-afa0-ebcd8aebb0c9",
+          "name": "Scheduled Task",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005cc321-08ce-4d17-b1ea-cb5275926520",
+          "name": "Socket Filters",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00d0b012-8a03-410e-95de-5826bf542de6",
+          "name": "Indicator Removal from Tools",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00f90846-cbd1-4fc5-9233-df5c2bf2a662",
+          "name": "Archive via Utility",
+          "match_type": "keyword",
+          "score": 1
+        }
+      ],
+      "ioc_counts": {
+        "ipv4": 0,
+        "ipv6": 0,
+        "url": 0,
+        "domain": 0,
+        "email": 0,
+        "hash": 0,
+        "filepath": 0,
+        "registry": 0,
+        "timestamp": 0
+      }
+    },
+    {
+      "filename": "logs\\AttackArtifacts\\obfuscation_1379809597.json",
+      "risk_score": 679,
+      "top_techniques": [
+        {
+          "id": "attack-pattern--0042a9f5-f053-4769-b3ef-9ad018dfa298",
+          "name": "Extra Window Memory Injection",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005a06c6-14bf-4118-afa0-ebcd8aebb0c9",
+          "name": "Scheduled Task",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005cc321-08ce-4d17-b1ea-cb5275926520",
+          "name": "Socket Filters",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00d0b012-8a03-410e-95de-5826bf542de6",
+          "name": "Indicator Removal from Tools",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00f90846-cbd1-4fc5-9233-df5c2bf2a662",
+          "name": "Archive via Utility",
+          "match_type": "keyword",
+          "score": 1
+        }
+      ],
+      "ioc_counts": {
+        "ipv4": 0,
+        "ipv6": 0,
+        "url": 0,
+        "domain": 0,
+        "email": 0,
+        "hash": 0,
+        "filepath": 0,
+        "registry": 0,
+        "timestamp": 0
+      }
+    },
+    {
+      "filename": "logs\\AttackArtifacts\\obfuscation_489249268.json",
+      "risk_score": 679,
+      "top_techniques": [
+        {
+          "id": "attack-pattern--0042a9f5-f053-4769-b3ef-9ad018dfa298",
+          "name": "Extra Window Memory Injection",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005a06c6-14bf-4118-afa0-ebcd8aebb0c9",
+          "name": "Scheduled Task",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005cc321-08ce-4d17-b1ea-cb5275926520",
+          "name": "Socket Filters",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00d0b012-8a03-410e-95de-5826bf542de6",
+          "name": "Indicator Removal from Tools",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00f90846-cbd1-4fc5-9233-df5c2bf2a662",
+          "name": "Archive via Utility",
+          "match_type": "keyword",
+          "score": 1
+        }
+      ],
+      "ioc_counts": {
+        "ipv4": 0,
+        "ipv6": 0,
+        "url": 0,
+        "domain": 0,
+        "email": 0,
+        "hash": 0,
+        "filepath": 0,
+        "registry": 0,
+        "timestamp": 0
+      }
+    },
+    {
+      "filename": "logs\\AttackArtifacts\\obfuscation_813663311.json",
+      "risk_score": 679,
+      "top_techniques": [
+        {
+          "id": "attack-pattern--0042a9f5-f053-4769-b3ef-9ad018dfa298",
+          "name": "Extra Window Memory Injection",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005a06c6-14bf-4118-afa0-ebcd8aebb0c9",
+          "name": "Scheduled Task",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005cc321-08ce-4d17-b1ea-cb5275926520",
+          "name": "Socket Filters",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00d0b012-8a03-410e-95de-5826bf542de6",
+          "name": "Indicator Removal from Tools",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00f90846-cbd1-4fc5-9233-df5c2bf2a662",
+          "name": "Archive via Utility",
+          "match_type": "keyword",
+          "score": 1
+        }
+      ],
+      "ioc_counts": {
+        "ipv4": 0,
+        "ipv6": 0,
+        "url": 0,
+        "domain": 0,
+        "email": 0,
+        "hash": 0,
+        "filepath": 0,
+        "registry": 0,
+        "timestamp": 0
+      }
+    },
+    {
+      "filename": "logs\\Temp Directories\\WDAGUtilityAccount_TempDirFiles.txt",
+      "risk_score": 673,
+      "top_techniques": [
+        {
+          "id": "attack-pattern--0042a9f5-f053-4769-b3ef-9ad018dfa298",
+          "name": "Extra Window Memory Injection",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005a06c6-14bf-4118-afa0-ebcd8aebb0c9",
+          "name": "Scheduled Task",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005cc321-08ce-4d17-b1ea-cb5275926520",
+          "name": "Socket Filters",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00d0b012-8a03-410e-95de-5826bf542de6",
+          "name": "Indicator Removal from Tools",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00f90846-cbd1-4fc5-9233-df5c2bf2a662",
+          "name": "Archive via Utility",
+          "match_type": "keyword",
+          "score": 1
+        }
+      ],
+      "ioc_counts": {
+        "ipv4": 0,
+        "ipv6": 0,
+        "url": 0,
+        "domain": 0,
+        "email": 0,
+        "hash": 0,
+        "filepath": 0,
+        "registry": 0,
+        "timestamp": 0
+      }
+    },
+    {
+      "filename": "logs\\SystemInfo\\arp_cache.txt",
+      "risk_score": 641,
+      "top_techniques": [
+        {
+          "id": "attack-pattern--0042a9f5-f053-4769-b3ef-9ad018dfa298",
+          "name": "Extra Window Memory Injection",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005a06c6-14bf-4118-afa0-ebcd8aebb0c9",
+          "name": "Scheduled Task",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005cc321-08ce-4d17-b1ea-cb5275926520",
+          "name": "Socket Filters",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00d0b012-8a03-410e-95de-5826bf542de6",
+          "name": "Indicator Removal from Tools",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00f90846-cbd1-4fc5-9233-df5c2bf2a662",
+          "name": "Archive via Utility",
+          "match_type": "keyword",
+          "score": 1
+        }
+      ],
+      "ioc_counts": {
+        "ipv4": 0,
+        "ipv6": 0,
+        "url": 0,
+        "domain": 0,
+        "email": 0,
+        "hash": 0,
+        "filepath": 0,
+        "registry": 0,
+        "timestamp": 0
+      }
+    },
+    {
+      "filename": "logs\\Network Connections\\Arp.txt",
+      "risk_score": 591,
+      "top_techniques": [
+        {
+          "id": "attack-pattern--0042a9f5-f053-4769-b3ef-9ad018dfa298",
+          "name": "Extra Window Memory Injection",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005cc321-08ce-4d17-b1ea-cb5275926520",
+          "name": "Socket Filters",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00d0b012-8a03-410e-95de-5826bf542de6",
+          "name": "Indicator Removal from Tools",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00f90846-cbd1-4fc5-9233-df5c2bf2a662",
+          "name": "Archive via Utility",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--01327cde-66c4-4123-bf34-5f258d59457b",
+          "name": "VNC",
+          "match_type": "keyword",
+          "score": 1
+        }
+      ],
+      "ioc_counts": {
+        "ipv4": 0,
+        "ipv6": 0,
+        "url": 0,
+        "domain": 0,
+        "email": 0,
+        "hash": 0,
+        "filepath": 0,
+        "registry": 0,
+        "timestamp": 0
+      }
+    },
+    {
+      "filename": "logs\\Users and Groups\\QueryUser.txt",
+      "risk_score": 586,
+      "top_techniques": [
+        {
+          "id": "attack-pattern--005a06c6-14bf-4118-afa0-ebcd8aebb0c9",
+          "name": "Scheduled Task",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--005cc321-08ce-4d17-b1ea-cb5275926520",
+          "name": "Socket Filters",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00d0b012-8a03-410e-95de-5826bf542de6",
+          "name": "Indicator Removal from Tools",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00f90846-cbd1-4fc5-9233-df5c2bf2a662",
+          "name": "Archive via Utility",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--01327cde-66c4-4123-bf34-5f258d59457b",
+          "name": "VNC",
+          "match_type": "keyword",
+          "score": 1
+        }
+      ],
+      "ioc_counts": {
+        "ipv4": 0,
+        "ipv6": 0,
+        "url": 0,
+        "domain": 0,
+        "email": 0,
+        "hash": 0,
+        "filepath": 0,
+        "registry": 0,
+        "timestamp": 0
+      }
+    },
+    {
+      "filename": "logs\\SMB Session\\Summary.txt",
+      "risk_score": 358,
+      "top_techniques": [
+        {
+          "id": "attack-pattern--00d0b012-8a03-410e-95de-5826bf542de6",
+          "name": "Indicator Removal from Tools",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--00f90846-cbd1-4fc5-9233-df5c2bf2a662",
+          "name": "Archive via Utility",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--01df3350-ce05-4bdf-bdf8-0a919a66d4a8",
+          "name": "Malicious Shell Modification",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--02c5abff-30bf-4703-ab92-1f6072fae939",
+          "name": "Fileless Storage",
+          "match_type": "keyword",
+          "score": 1
+        },
+        {
+          "id": "attack-pattern--035bb001-ab69-4a0b-9f6c-2de8b09e1b9d",
+          "name": "Adversary-in-the-Middle",
+          "match_type": "keyword",
+          "score": 1
+        }
+      ],
+      "ioc_counts": {
+        "ipv4": 0,
+        "ipv6": 0,
+        "url": 0,
+        "domain": 0,
+        "email": 0,
+        "hash": 0,
+        "filepath": 0,
+        "registry": 0,
+        "timestamp": 0
+      }
+    }
+  ],
+  "narrative": "Activity is dominated by defense evasion with additional evidence across 14 ATT&CK stages.\nMost frequent technique observed: attack-pattern--00d0b012-8a03-410e-95de-5826bf542de6 \u2014 Indicator Removal from Tools.",
+  "generated_at": "2025-08-30T04:55:30.112136Z"
 }

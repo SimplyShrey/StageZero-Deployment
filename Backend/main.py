@@ -339,10 +339,15 @@ def build_deep_report(classified: List[Dict[str, Any]]) -> Dict[str, Any]:
     total_score = sum(e.get("file_risk_score", 0) for e in classified)
     overall_severity = severity_from_score(total_score)
 
+    # convert numeric score to "percentage" style (0-100)
+    max_score = max(total_score, 1)  # avoid divide by zero
+    risk_percent = min(round((total_score / (total_score + 100)) * 100), 100)
+
     tactic_breakdown = [{"tactic": t, "count": c} for t, c in sorted(tactic_counts.items(), key=lambda x: x[1], reverse=True)]
     top_techniques = [{"id": tid, "name": name, "count": cnt} for (tid, name), cnt in technique_counts.most_common(15)]
     ioc_summary = {k: sorted(list(v))[:500] for k, v in all_iocs.items()}
 
+    # build narrative
     narrative = []
     if tactic_breakdown:
         lead = tactic_breakdown[0]["tactic"].replace("-", " ")
@@ -354,15 +359,43 @@ def build_deep_report(classified: List[Dict[str, Any]]) -> Dict[str, Any]:
         narrative.append("Network indicators (domains/URLs) were identified; review egress/DNS logs.")
     if ioc_summary.get("hash"):
         narrative.append("File hashes were found; consider retro-hunting in EDR/AV.")
-    narrative_text = " ".join(narrative) or "No significant malicious patterns detected."
+    narrative_text = "\n".join(narrative) or "No significant malicious patterns detected."
 
-    report = {
+    # markdown-ready report with line breaks
+    md = [
+        "# Deep Incident Report",
+        f"- Generated: {datetime.utcnow().isoformat()}Z",
+        f"- Total Logs: {len(classified)}",
+        f"- Distinct Techniques: {len(technique_counts)}",
+        f"- Tactics Observed: {len(tactic_counts)}",
+        f"- Overall Risk: {overall_severity} ({risk_percent}%)",
+        "",
+        "## Narrative",
+        narrative_text,
+        "",
+        "## Tactics Breakdown",
+    ]
+    for t in tactic_breakdown:
+        md.append(f"- **{t['tactic'].replace('-', ' ').title()}**: {t['count']} hits")
+    md.append("")
+    md.append("## Top Techniques")
+    for t in top_techniques:
+        md.append(f"- **{t['id']}** — {t['name']}: {t['count']} hits")
+    md.append("")
+    md.append("## IOC Summary")
+    for k, vals in ioc_summary.items():
+        md.append(f"- **{k.upper()}** ({len(vals)}): {', '.join(vals[:10])}{' ...' if len(vals) > 10 else ''}")
+
+    with open("report.md", "w", encoding="utf-8") as fh:
+        fh.write("\n".join(md))
+
+    return {
         "summary": {
             "total_logs": len(classified),
             "distinct_techniques": len(technique_counts),
             "tactics_observed": len(tactic_counts),
-            "overall_risk_score": round(total_score, 3),
             "overall_severity": overall_severity,
+            "risk_percent": risk_percent
         },
         "tactics_breakdown": tactic_breakdown,
         "top_techniques": top_techniques,
@@ -371,39 +404,6 @@ def build_deep_report(classified: List[Dict[str, Any]]) -> Dict[str, Any]:
         "narrative": narrative_text,
         "generated_at": datetime.utcnow().isoformat() + "Z"
     }
-
-    # persist artifacts
-    with open("report.json", "w", encoding="utf-8") as fh:
-        json.dump(report, fh, indent=2)
-    # markdown summary
-    md = [
-        "# Deep Incident Report",
-        f"- Generated: {report['generated_at']}",
-        f"- Total Logs: {report['summary']['total_logs']}",
-        f"- Distinct Techniques: {report['summary']['distinct_techniques']}",
-        f"- Tactics Observed: {report['summary']['tactics_observed']}",
-        f"- Overall Risk Score: {report['summary']['overall_risk_score']} ({report['summary']['overall_severity']})",
-        "",
-        "## Narrative",
-        report["narrative"],
-        "",
-        "## Tactics Breakdown",
-    ]
-    for t in report["tactics_breakdown"]:
-        md.append(f"- **{t['tactic'].replace('-', ' ').title()}**: {t['count']} hits")
-    md.append("")
-    md.append("## Top Techniques")
-    for t in report["top_techniques"]:
-        md.append(f"- **{t['id']}** — {t['name']}: {t['count']} hits")
-    md.append("")
-    md.append("## IOC Summary")
-    for k, vals in report["ioc_summary"].items():
-        md.append(f"- **{k.upper()}** ({len(vals)}): {', '.join(vals[:10])}{' ...' if len(vals) > 10 else ''}")
-
-    with open("report.md", "w", encoding="utf-8") as fh:
-        fh.write("\n".join(md))
-
-    return report
 
 # -------------------- API Endpoints --------------------
 @app.post("/upload-logs")
@@ -513,3 +513,4 @@ def send_to_watsonx():
 @app.get("/check-status")
 def check_status():
     return {"output": "✅ Server is running fine."}
+

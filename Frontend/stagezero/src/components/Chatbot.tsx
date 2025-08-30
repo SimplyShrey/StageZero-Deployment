@@ -13,12 +13,12 @@ const Chatbot: React.FC = () => {
   const [password, setPassword] = useState("");
   const chatEndRef = useRef<HTMLDivElement>(null);
 
-  // auto-scroll to last message
+  // Auto-scroll to the last message
   useEffect(() => {
     chatEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages]);
 
-  // handle log archive file selection
+  // Handle log archive file selection
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files?.length) {
       const selectedFile = e.target.files[0];
@@ -30,7 +30,7 @@ const Chatbot: React.FC = () => {
     }
   };
 
-  // run action (upload + analyze logs OR check server status)
+  // Run action (upload + analyze logs OR check server status)
   const runAction = async (action: "analyze-log" | "check-status") => {
     if (action === "analyze-log" && !file) {
       setMessages((prev) => [
@@ -44,7 +44,6 @@ const Chatbot: React.FC = () => {
       ...prev,
       { text: `➡️ User triggered: ${action}`, sender: "user" },
     ]);
-    
 
     try {
       const formData = new FormData();
@@ -74,6 +73,39 @@ const Chatbot: React.FC = () => {
       setMessages((prev) => [
         ...prev,
         { text: `❌ Error: ${errorMsg}`, sender: "bot" },
+      ]);
+    }
+  };
+
+  // Generate deep report
+  const generateReport = async () => {
+    setMessages((prev) => [
+      ...prev,
+      { text: "➡️ User triggered: generate report", sender: "user" },
+    ]);
+
+    try {
+      const response = await fetch("http://localhost:8000/api/report/deep");
+      if (!response.ok) throw new Error(`Server error: ${response.status}`);
+
+      const data = await response.json();
+
+      const summary = `
+📊 Deep Incident Report
+- Total Logs: ${data.summary?.total_logs}
+- Distinct Techniques: ${data.summary?.distinct_techniques}
+- Tactics Observed: ${data.summary?.tactics_observed}
+- Overall Risk Level: ${data.summary?.overall_severity}
+
+📝 Narrative:
+${data.narrative}
+      `;
+
+      setMessages((prev) => [...prev, { text: summary, sender: "bot" }]);
+    } catch (err) {
+      setMessages((prev) => [
+        ...prev,
+        { text: "❌ Failed to generate deep report.", sender: "bot" },
       ]);
     }
   };
@@ -123,42 +155,34 @@ const Chatbot: React.FC = () => {
             <button onClick={() => runAction("check-status")}>
               Check Server Status
             </button>
-
             <button
-              onClick={async () => {
+            onClick={async () => {
+              setMessages((prev) => [
+                ...prev,
+                { text: "➡️ User triggered: Dynamic Mode", sender: "user" },
+              ]);
+
+              try {
+                const response = await fetch("http://localhost:8000/api/report/dynamic");
+                if (!response.ok) throw new Error(`Server error: ${response.status}`);
+                const data = await response.json();
+
                 setMessages((prev) => [
                   ...prev,
-                  { text: "➡️ User triggered: generate report", sender: "user" },
+                  { text: data.output || "✅ Dynamic Mode activated.", sender: "bot" },
                 ]);
+              } catch (err) {
+                setMessages((prev) => [
+                  ...prev,
+                  { text: `❌ Failed to activate Dynamic Mode.`, sender: "bot" },
+                ]);
+              }
+            }}
+          >
+            Dynamic Mode
+          </button>
 
-                try {
-                  const response = await fetch("http://localhost:8000/api/report/deep");
-                  if (!response.ok) throw new Error(`Server error: ${response.status}`);
-
-                  const data = await response.json();
-
-                  const summary = `
-          📊 Deep Incident Report
-          - Total Logs: ${data.summary?.total_logs}
-          - Distinct Techniques: ${data.summary?.distinct_techniques}
-          - Tactics Observed: ${data.summary?.tactics_observed}
-          - Overall Risk Score: ${data.summary?.overall_risk_score} (${data.summary?.overall_severity})
-
-          📝 Narrative:
-          ${data.narrative}
-                  `;
-
-                  setMessages((prev) => [...prev, { text: summary, sender: "bot" }]);
-                } catch (err) {
-                  setMessages((prev) => [
-                    ...prev,
-                    { text: "❌ Failed to generate deep report.", sender: "bot" },
-                  ]);
-                }
-              }}
-            >
-              Generate Report
-            </button>
+            <button onClick={generateReport}>Generate Report</button>
 
             <button onClick={() => setMessages([])}>Clear Chat</button>
           </div>
