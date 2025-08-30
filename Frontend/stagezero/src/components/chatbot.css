@@ -38,14 +38,14 @@ body, html {
   background-color: #c9e8ff;
 }
 
-.message-user {
+.user-message {
   text-align: right;
   color: #0c0c16;
   margin: 5px 0;
   font-weight: bold;
 }
 
-.message-bot {
+.bot-message {
   text-align: left;
   color: #0c0c16;
   margin: 5px 0;

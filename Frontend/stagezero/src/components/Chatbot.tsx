@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import "./chatbot.css";
+import Message from "./Message";
 
 interface MessageType {
   text: string;
@@ -9,6 +10,7 @@ interface MessageType {
 const Chatbot: React.FC = () => {
   const [messages, setMessages] = useState<MessageType[]>([]);
   const [file, setFile] = useState<File | null>(null);
+  const [password, setPassword] = useState("");
   const chatEndRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -35,16 +37,21 @@ const Chatbot: React.FC = () => {
       const formData = new FormData();
       if (file && action === "analyze-log") formData.append("file", file);
       formData.append("action", action);
-
-      const res = await fetch("http://localhost:8000/run-command", {
+      if (password) formData.append("password", password);
+      const res = await fetch("http://localhost:8000/upload-logs", {
         method: "POST",
         body: formData,
       });
 
       const data = await res.json();
       setMessages(prev => [...prev, { text: data.output, sender: "bot" }]);
-    } catch (err) {
-      setMessages(prev => [...prev, { text: `Error: ${err}`, sender: "bot" }]);
+    } 
+    // catch (err) {
+    //   setMessages(prev => [...prev, { text: `Error: ${err}`, sender: "bot" }]);
+    // } 
+    catch (err) {
+        const errorMsg = err instanceof Error ? err.message : String(err);
+        setMessages(prev => [...prev, { text: `Error: ${errorMsg}`, sender: "bot" }]);
     }
   };
 
@@ -58,18 +65,28 @@ const Chatbot: React.FC = () => {
 
         <div className="chatbot-messages">
           {messages.map((msg, i) => (
-            <div key={i} className={`message-${msg.sender}`}>
-              {msg.text}
-            </div>
+            // <div key={i} className={`message-${msg.sender}`}>
+            //   {msg.text}
+            // </div>
+            <Message key={i} text={msg.text} sender={msg.sender} />
           ))}
           <div ref={chatEndRef}></div>
         </div>
-
+        
         <div className="chatbot-inputs">
           <label className="file-upload-btn">
             Upload Log
             <input type="file" accept=".zip,.7z" onChange={handleFileChange} hidden />
           </label>
+
+          {/* NEW password input */}
+          <input
+            type="password"
+            placeholder="Archive password (if any)"
+            value={password}
+            onChange={e => setPassword(e.target.value)}
+            style={{ marginLeft: 10 }}
+          />
 
           <div className="chatbot-buttons">
             <button onClick={() => runAction("analyze-log")}>Analyze Uploaded Log</button>

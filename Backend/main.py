@@ -4,20 +4,36 @@ import pandas as pd
 import zipfile
 import tempfile
 import py7zr
-from fastapi import FastAPI, UploadFile, File
+import requests
+import shutil
+from fastapi import FastAPI, UploadFile, File, Form
 from fastapi.middleware.cors import CORSMiddleware
+from pydantic import BaseModel
 
 app = FastAPI()
 
 # Allow React frontend
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000"],  # change if needed
+    # allow_origins=["http://localhost:3000"],  # change if needed
+    allow_origins=["*"],
+    allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"]
 )
 
 MITRE_FILE = "mitre_data/enterprise-attack.json"
+
+# Paths & Configs
+UPLOAD_DIR = "uploads"
+CLASSIFIED_LOGS_JSON = os.path.join(os.getcwd(), "classified_logs.json")
+WATSONX_API_KEY = "L23Q8Etg6haY0c2Z51OM9ToQQAMmvc7lFtyWrmxnhe2A"
+WATSONX_URL = "https://eu-de.ml.cloud.ibm.com"
+PROJECT_ID = "f648a793-9b86-460d-b31b-af8de0f66fde"
+
+# --- Models ---
+class CommandRequest(BaseModel):
+    command: str
 
 # ---------------------- Helpers ----------------------
 def read_file(file_path):
@@ -103,27 +119,93 @@ def classify_logs(all_logs):
 
 # ---------------------- API Endpoints ----------------------
 @app.post("/upload-logs")
-async def upload_logs(file: UploadFile = File(...)):
-    with tempfile.TemporaryDirectory() as tmpdir:
-        file_path = os.path.join(tmpdir, file.filename)
+async def upload_logs(action: str = Form(...), file: UploadFile = None, password: str = Form(None)):
+    print(f"Received password: {password}")
+    if action == "check-status":
+        return {"output": "Server is running."}
+    if action == "analyze-log":
+        if not file:
+            return JSONResponse({"output": "No file uploaded."}, status_code=400)
+        with tempfile.TemporaryDirectory() as tmpdir:
+            file_path = os.path.join(tmpdir, file.filename)
+            with open(file_path, "wb") as f:
+                f.write(await file.read())
+
+            # Try to extract .7z archive
+            try:
+                with py7zr.SevenZipFile(file_path, mode='r', password=password) as archive:
+                    archive.extractall(path=tmpdir)
+                # You can process extracted files here
+                extracted_files = os.listdir(tmpdir)
+                return {"output": f"Archive extracted! Files: {extracted_files}"}
+            except py7zr.exceptions.PasswordRequired:
+                return {"output": "Password is required for extracting given archive."}
+            except py7zr.exceptions.Bad7zFile:
+                return {"output": "Invalid or corrupted archive."}
+            except Exception as e:
+                return {"output": f"Error extracting archive: {str(e)}"}
+    return {"output": "Unknown action."}
+
+@app.get("/classify")
+def classify_logs_endpoint():
+    """Return locally classified logs."""
+    try:
+        with open(CLASSIFIED_LOGS_JSON, "r", encoding="utf-8") as f:
+            classified_logs = json.load(f)
+        return classified_logs
+    except FileNotFoundError:
+        return {"error": "No classified logs found. Please upload and analyze logs first."}
+
+@app.get("/sample")
+def sample_log():
+    """Test endpoint to verify API is running."""
+    return {"example": "Log classification API running locally."}
+
+@app.get("/send_to_watsonx")
+def send_to_watsonx():
+    """Send classified logs to Watsonx project."""
+    try:
+        with open(CLASSIFIED_LOGS_JSON, "r", encoding="utf-8") as f:
+            classified_logs = json.load(f)
+
+        url = f"{WATSONX_URL}/v1/projects/{PROJECT_ID}/ingest"
+        headers = {
+            "Authorization": f"Bearer {WATSONX_API_KEY}",
+            "Content-Type": "application/json"
+        }
+
+        response = requests.post(url, headers=headers, json=classified_logs)
+        response.raise_for_status()
+        return {"status": "success", "watsonx_response": response.json()}
+    except FileNotFoundError:
+        return {"status": "error", "detail": "No classified logs found."}
+    except requests.exceptions.RequestException as e:
+        return {"status": "error", "detail": str(e)}
+
+@app.post("/run-command")
+async def run_command(action: str = Form(...), file: UploadFile = File(None)):
+    output = ""
+    if action == "analyze-log":
+        if not file:
+            return {"output": "No file uploaded."}
+        os.makedirs(UPLOAD_DIR, exist_ok=True)
+        file_path = os.path.join(UPLOAD_DIR, file.filename)
         with open(file_path, "wb") as f:
-            f.write(await file.read())
+            shutil.copyfileobj(file.file, f)
+        output = f"File {file.filename} received and ready for analysis."
+        print(f"[CLI] {output}")  # prints to your terminal
+    elif action == "check-status":
+        output = "Server is running."
+        print(f"[CLI] {output}")  # prints to your terminal
+    return {"output": output}
 
-        extract_path = os.path.join(tmpdir, "extracted")
-        os.makedirs(extract_path, exist_ok=True)
-
-        # Extract ZIP or 7z
-        if file.filename.endswith(".zip"):
-            with zipfile.ZipFile(file_path, "r") as zip_ref:
-                zip_ref.extractall(extract_path)
-        elif file.filename.endswith(".7z"):
-            with py7zr.SevenZipFile(file_path, mode='r') as archive:
-                archive.extractall(path=extract_path)
-        else:
-            return {"error": "Unsupported file format. Upload .zip or .7z"}
-
-        # Load & classify logs
-        all_logs = load_logs_from_folder(extract_path)
+@app.post("/api/report")
+async def get_report(logs: str = Form(...)):
+    """Generate report from logs text."""
+    try:
+        all_logs = [{"filename": "input", "text": logs}]
         classified = classify_logs(all_logs)
-
-    return {"classified_logs": classified}
+        report = f"Report generated. Classified {len(classified)} entries."
+        return {"report": report}
+    except Exception as e:
+        return {"report": f"Error generating report: {str(e)}"}
