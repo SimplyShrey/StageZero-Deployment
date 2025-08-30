@@ -120,43 +120,31 @@ def classify_logs(all_logs):
 # ---------------------- API Endpoints ----------------------
 @app.post("/upload-logs")
 async def upload_logs(action: str = Form(...), file: UploadFile = None, password: str = Form(None)):
+    print(f"Received password: {password}")
     if action == "check-status":
         return {"output": "Server is running."}
-    elif action == "analyze-log":
+    if action == "analyze-log":
         if not file:
-            return {"output": "No file uploaded."}
-        try:
-            with tempfile.TemporaryDirectory() as tmpdir:
-                file_path = os.path.join(tmpdir, file.filename)
-                with open(file_path, "wb") as f:
-                    f.write(await file.read())
+            return JSONResponse({"output": "No file uploaded."}, status_code=400)
+        with tempfile.TemporaryDirectory() as tmpdir:
+            file_path = os.path.join(tmpdir, file.filename)
+            with open(file_path, "wb") as f:
+                f.write(await file.read())
 
-                extract_path = os.path.join(tmpdir, "extracted")
-                os.makedirs(extract_path, exist_ok=True)
-
-                # Extract ZIP or 7z
-                if file.filename.endswith(".zip"):
-                    with zipfile.ZipFile(file_path, "r") as zip_ref:
-                        zip_ref.extractall(extract_path)
-                elif file.filename.endswith(".7z"):
-                    with py7zr.SevenZipFile(file_path, mode='r') as archive:
-                        archive.extractall(path=extract_path)
-                else:
-                    return {"output": "Unsupported file format. Upload .zip or .7z"}
-
-                # Load & classify logs
-                all_logs = load_logs_from_folder(extract_path)
-                classified = classify_logs(all_logs)
-
-                # Save to JSON
-                with open(CLASSIFIED_LOGS_JSON, "w", encoding="utf-8") as f:
-                    json.dump(classified, f, indent=4)
-
-            return {"output": f"Analysis complete. Classified {len(classified)} logs."}
-        except Exception as e:
-            return {"output": f"Error: {str(e)}"}
-    else:
-        return {"output": "Unknown action."}
+            # Try to extract .7z archive
+            try:
+                with py7zr.SevenZipFile(file_path, mode='r', password=password) as archive:
+                    archive.extractall(path=tmpdir)
+                # You can process extracted files here
+                extracted_files = os.listdir(tmpdir)
+                return {"output": f"Archive extracted! Files: {extracted_files}"}
+            except py7zr.exceptions.PasswordRequired:
+                return {"output": "Password is required for extracting given archive."}
+            except py7zr.exceptions.Bad7zFile:
+                return {"output": "Invalid or corrupted archive."}
+            except Exception as e:
+                return {"output": f"Error extracting archive: {str(e)}"}
+    return {"output": "Unknown action."}
 
 @app.get("/classify")
 def classify_logs_endpoint():
