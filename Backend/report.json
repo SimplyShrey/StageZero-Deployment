@@ -1,0 +1,15 @@
+{
+  "summary": {
+    "total_logs": 0,
+    "distinct_techniques": 0,
+    "tactics_observed": 0,
+    "overall_risk_score": 0,
+    "overall_severity": "low"
+  },
+  "tactics_breakdown": [],
+  "top_techniques": [],
+  "ioc_summary": {},
+  "files": [],
+  "narrative": "No significant malicious patterns detected.",
+  "generated_at": "2025-08-30T04:17:26.907667Z"
+}

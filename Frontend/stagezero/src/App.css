@@ -1,15 +1,23 @@
-/* Center everything vertically and horizontally */
+/* Full-screen layout */
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f5f7fa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .app-container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-color: #f0f2f5;
-  font-family: Arial, sans-serif;
-}
-
-h1 {
-  margin-bottom: 20px;
-  color: #333;
+  width: 80%;
+  max-width: 1200px;
+  height: 90%;
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  overflow: hidden;
 }
